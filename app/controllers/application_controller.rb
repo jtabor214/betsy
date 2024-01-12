@@ -10,7 +10,7 @@ include ActionController::RequestForgeryProtection
   #For testing
   def test
     if params.has_key?(:login)
-      login!(CreateUser.first)
+      login!(User.first)
     elseif params.has_key?(:logout)
       logout! 
     end 
@@ -23,7 +23,7 @@ include ActionController::RequestForgeryProtection
   end
 
   def current_user 
-    @current_user ||= CreateUser.find_by(session_token: session[:session_token])
+    @current_user ||= User.find_by(session_token: session[:session_token])
   end
 
   def require_logged_in 

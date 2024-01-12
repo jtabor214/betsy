@@ -1,4 +1,4 @@
-class CreateUser < ApplicationRecord
+class User < ApplicationRecord
   has_secure_password 
   before_validation :ensure_session_token
 
@@ -9,7 +9,7 @@ class CreateUser < ApplicationRecord
 
   def self.find_by_credentials(credential, password)
     field = credential =~ URI::MailTo::EMAIL_REGEXP ? :email : :name
-    user = CreateUser.find_by(field => credential)
+    user = User.find_by(field => credential)
     if user&.authenticate(password)
       return user 
     else 
@@ -32,7 +32,7 @@ class CreateUser < ApplicationRecord
   def generate_unique_session_token
     while true 
       token = SecureRandom.urlsafe_base64 
-      return token unless CreateUser.exists?(session_token: token)
+      return token unless User.exists?(session_token: token)
     end 
   end
 
