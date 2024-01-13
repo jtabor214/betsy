@@ -4,19 +4,20 @@ include ActionController::RequestForgeryProtection
   rescue_from StandardError, with: :unhandled_error 
   rescue_from ActionController::InvalidAuthenticityToken, with: :invalid_authenticity_token
 
-  protect_from_forgery with: :exception
+  # protect_from_forgery with: :exception
   before_action :snake_case_params, :attach_authenticity_token
 
   #For testing
   def test
+    # debugger
     if params.has_key?(:login)
       login!(User.first)
-    elseif params.has_key?(:logout)
+    elsif params.has_key?(:logout)
       logout! 
     end 
 
     if current_user 
-      render json: { user: current_user.slice('id', 'username', 'session_token')}
+      render json: { user: current_user.slice('id', 'name', 'session_token')}
     else 
       render json: ['No current user']
     end
@@ -67,10 +68,12 @@ include ActionController::RequestForgeryProtection
   end
 
   def snake_case_params
+    # debugger
     params.deep_transform_keys!(&:underscore)
   end
 
   def attach_authenticity_token
+    # debugger
     headers['X-CSRF-Token'] = masked_authenticity_token(session)
   end
 
