@@ -7,25 +7,25 @@ function Navigation(){
   const sessionUser = useSelector(state => state.session.user);
 
   const sessionLinks = sessionUser ? (
-    <li>
+    <ul>
       <ProfileButton user={sessionUser} />
-    </li>
+    </ul>
   ) : (
     <>
-      <li>
+      <ul>
         <NavLink to="/login">Log In</NavLink>
-      </li>
-      <li>
+      </ul>
+      <ul>
         <NavLink to="/signup">Sign Up</NavLink>
-      </li>
+      </ul>
     </>
   );
 
   return (
     <ul>
-      <li>
+      <ul>
         <NavLink to="/">Home</NavLink>
-      </li>
+      </ul>
       {sessionLinks}
     </ul>
   );
