@@ -1,6 +1,6 @@
-33fclass Api::SessionsController < ApplicationController
-  before_action :require_logged_in, only: [:create]
-  before_action :require_logged_in, only: [:destroy]
+Api::SessionsController < ApplicationController
+  # before_action :require_logged_in, only: [:create]
+  # before_action :require_logged_in, only: [:destroy]
 
   def show 
     @user = current_user
@@ -31,4 +31,4 @@
       render json: { message: 'logged out'}
     end
   end 
-end
+
