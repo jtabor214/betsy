@@ -1,4 +1,4 @@
-Api::SessionsController < ApplicationController
+class Api::SessionsController < ApplicationController
   # before_action :require_logged_in, only: [:create]
   # before_action :require_logged_in, only: [:destroy]
 
@@ -31,4 +31,4 @@ Api::SessionsController < ApplicationController
       render json: { message: 'logged out'}
     end
   end 
-
+end
