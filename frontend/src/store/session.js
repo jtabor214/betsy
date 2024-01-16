@@ -76,7 +76,7 @@ const sessionReducer = (state = initialState, action) => {
   case REMOVE_USER:
     return {
       ...state,
-      user: undefined,
+      user: null,
     };
   }
 };

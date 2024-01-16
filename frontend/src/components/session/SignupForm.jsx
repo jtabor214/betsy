@@ -20,7 +20,7 @@ function SignupForm() {
     e.preventDefault();
     if (password === confirmPassword) {
       setErrors([]);
-      return dispatch(sessionActions.signup({ email, username, password }))
+      return dispatch(sessionActions.signup({ email, name, password }))
         .catch(async (res) => {
           let data;
           try {
@@ -54,7 +54,7 @@ function SignupForm() {
           />
         </label>
         <label>
-          Username
+          Name
           <input
             type="text"
             value={name}
