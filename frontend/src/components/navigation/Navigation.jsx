@@ -16,7 +16,7 @@ function Navigation(){
   ) : (
     <>
       <ul>
-        <button onClick={() => {dispatch(showModal("login"))}}>Log In</button>
+        <button id="sign_in_button" onClick={() => {dispatch(showModal("login"))}}>Sign In</button>
       </ul>
     </>
   );
@@ -29,10 +29,10 @@ function Navigation(){
         <p>Categories</p>
         <div id="search_bar">Seach Bar</div>
         {sessionLinks}
-        <button>Cart Icon</button>
+        <button id="cart_button">Cart</button>
       </div>
       <div id="quick_look">
-        <p>Valentine's Day Gifts</p>
+        <p>Valentine&apos;s Day Gifts</p>
         <p>Home Favorites</p>
         <p>Fashion Finds</p>
         <p>Gift Guides</p>

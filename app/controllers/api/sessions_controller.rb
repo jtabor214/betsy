@@ -12,7 +12,6 @@ class Api::SessionsController < ApplicationController
   end
 
   def create 
-    debugger
     credential = params[:credential]
     password = params[:password]
 

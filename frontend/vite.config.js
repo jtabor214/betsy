@@ -16,6 +16,10 @@ export default defineConfig(({ mode }) => ({
       '/api': 'http://localhost:5000',
     },
   },
+  build: {
+    outDir: '../public',
+    emptyOutDir: true
+  },
   // To automatically open the app in the browser whenever the server starts,
   // uncomment the following lines:
   // server: {
