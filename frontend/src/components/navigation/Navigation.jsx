@@ -1,9 +1,12 @@
 import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import ProfileButton from './ProfileButton';
+import SessionModal from '../../SessionModal/SessionModal';
 import './Navigation.css';
+import { showModal } from '../../store/modals';
 
 function Navigation(){
+  const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
 
   const sessionLinks = sessionUser ? (
@@ -13,21 +16,29 @@ function Navigation(){
   ) : (
     <>
       <ul>
-        <NavLink to="/login">Log In</NavLink>
-      </ul>
-      <ul>
-        <NavLink to="/signup">Sign Up</NavLink>
+        <button id="sign_in_button" onClick={() => {dispatch(showModal("login"))}}>Sign In</button>
       </ul>
     </>
   );
 
   return (
-    <ul>
-      <ul>
-        <NavLink to="/">Home</NavLink>
-      </ul>
-      {sessionLinks}
-    </ul>
+    <header id="main_header">
+      <div id="nav_bar">
+        <SessionModal />
+        <NavLink id="name" to="/">Betsy</NavLink>
+        <p>Categories</p>
+        <div id="search_bar">Seach Bar</div>
+        {sessionLinks}
+        <button id="cart_button">Cart</button>
+      </div>
+      <div id="quick_look">
+        <p>Valentine&apos;s Day Gifts</p>
+        <p>Home Favorites</p>
+        <p>Fashion Finds</p>
+        <p>Gift Guides</p>
+        <p>Registry</p>
+      </div>
+    </header>
   );
 }
 

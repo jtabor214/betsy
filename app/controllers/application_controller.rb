@@ -10,7 +10,7 @@ class ApplicationController < ActionController::API
 
   #For testing
   def test
-    # debugger
+
     if params.has_key?(:login)
       login!(User.first)
     elsif params.has_key?(:logout)
@@ -69,12 +69,12 @@ class ApplicationController < ActionController::API
   end
 
   def snake_case_params
-    # debugger
+
     params.deep_transform_keys!(&:underscore)
   end
 
   def attach_authenticity_token
-    # debugger
+
     headers['X-CSRF-Token'] = masked_authenticity_token(session)
   end
 

@@ -1,0 +1,97 @@
+@font-face { 
+  font-family: 'Guardian-EgypTT-Light';
+  src: url('/frontend/public/assets/fonts/Guardian-EgypTT-Light.woff2') format('woff2');
+}
+
+#main_header{
+  border: 1px solid red;
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#nav_bar {  
+  padding-top: 12px;
+  padding-left: 36px;
+  padding-right: 36px;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+
+#quick_look{
+  /* font-family: Arial, Helvetica, sans-serif; */
+
+  padding-top: 4px;
+  padding-bottom: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 40px
+}
+
+#name{
+  vertical-align: middle;
+  font-size: 40px;
+  color: rgb(241,100,31);
+  text-decoration: none;
+
+}
+
+#sign_in_button{
+  display: inline-block;
+  font-weight: 500;
+  font-size: 12.99px;
+  font: inherit;
+  line-height: 1.4;
+  min-height: 36px;
+  min-width: 36px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: aliceblue;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+}
+
+#sign_in_button:hover{
+  background-color: rgb(216,216,216);
+  transition:  0.3s;
+  transform: skew();
+  /* transform: scale(1.1); */
+}
+
+#search_bar{
+  padding-right: 18px;
+  box-sizing: inherit;
+}
+
+#cart_button{
+  display: inline-block;
+  font-weight: 500;
+  font-size: 12.99px;
+  font: inherit;
+  line-height: 1.4;
+  min-height: 36px;
+  min-width: 36px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border: none;
+  border-radius: 360px;
+  background-color: aliceblue;
+  cursor: pointer;
+}
+
+#cart_button:hover{
+  background-color: rgb(216,216,216);
+  transition: background-color 0.3s ease;
+  /* transform: scale(1.1); */
+}
