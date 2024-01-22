@@ -17,11 +17,12 @@ const ProductIndexItem = () => {
 
   return (
     <div className='product-card-container'>
-      <ul>
+      <div className='product-content'>
+        <Link to={`products/${product.id}`}>This is an item</Link>
+        <h4>{product.name}</h4>
+        <p>${product.price}</p>
         {/* <Link to={`/products/${product.id}`}>This is one item</Link> */}
-        <Link to={`products/${product.name}`}>This is an item</Link>
-
-      </ul>
+      </div>
     </div>
   );
 };

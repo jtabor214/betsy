@@ -1,6 +1,7 @@
 .session-modal{
   margin: auto;
   background-color: rgb(255,255,255);
+  border: 2px solid blue;
   border-radius: 24px;
 
   box-shadow:rgba(0, 0, 0, 0.3019607843);
@@ -8,9 +9,49 @@
   height: fit-content;
   display: flex;
   flex-direction: column;
-  justify-content: center; 
-  align-items: center;
   z-index: 80; 
+}
+.session-modal-header{
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border:2px solid purple;
+  display: flex;
+  justify-content: space-between;
+  align-items: center !important;
+
+}
+
+#title{
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 1.4;
+}
+
+#register-button{
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 15px;
+  padding-right: 15px;
+  min-height: 36px;
+  min-width: 36px;
+  display: inline-block;
+  background: unset;
+  font-size: 13px;
+
+  line-height: 2.0;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 24px;
+  border-color: black;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+#register-button:hover{
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+  transform: scale(1.01);
 }
 
 /* position absolute top -pixels */

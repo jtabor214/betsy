@@ -24,13 +24,12 @@ function SessionModal({ onSuccess }) {
     <Modal >
       <div className="session-modal">
         <button className='back-button' onClick={goBack}>&times;</button>
-        <h1>{modalType === "login" ? "Sign In" : "Register"}</h1>
-        <button
-          className="link"
-          onClick={() => dispatch(modalActions.showModal(modalType === "login" ? "signup" : "login"))}
-        >
-          {modalType === "login" ? "Register" : "Log in" }
-        </button>
+        <div className="session-modal-header">
+          <h1 id='title'>{modalType === "login" ? "Sign In" : "Register"}</h1>
+          <button id="register-button" onClick={() => dispatch(modalActions.showModal(modalType === "login" ? "signup" : "login"))}>
+            {modalType === "login" ? "Register" : "Log in" }
+          </button>
+        </div>
         {modalType === "login" ? (
           <LoginForm onSuccess={onSuccess} />
         ) : (

@@ -42,13 +42,13 @@ require "open-uri"
      filename: "brawl.png"
      )
 
-  10.times do 
-    Product.create!({
-      name: Faker::Commerce.product_name,
-      description: Faker::Lorem.sentence,
-      price: Faker::Commerce.price(range: 7..350)
-    })
-  end
+  # 10.times do 
+  #   Product.create!({
+  #     name: Faker::Commerce.product_name,
+  #     description: Faker::Lorem.sentence,
+  #     price: Faker::Commerce.price(range: 7..350)
+  #   })
+  # end
 
   puts "Done!"
 # end

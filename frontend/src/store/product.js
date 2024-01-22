@@ -30,16 +30,17 @@ export const selectProduct = (productId) => { return (state) =>
 export const selectProductsArray = (state) => Object.values(state.products);
 
 export const fetchProducts = () => async dispatch => {
-  const response = await fetch(`api/products`);
+  const response = await fetch(`/api/products`);
 
   if (response.ok) {
     const products = await response.json();
     dispatch(receiveProducts(products));
+    console.log(products);
   }
 };
 
 export const fetchProduct = (productId) => async dispatch => {
-  const response = await fetch(`api/products/${productId}`);
+  const response = await fetch(`/api/products/${productId}`);
 
   if (response.ok) {
     const product = await response.json();
