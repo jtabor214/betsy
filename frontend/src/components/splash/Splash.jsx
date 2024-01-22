@@ -1,5 +1,13 @@
-function Splash() {
+// import { useDispatch } from "react-redux";
+// import { fetchProducts } from "../../store/product";
 
-}
 
-export default Splash
+const SplashPage = () => {
+
+//   const homePageDisplay = () => ({
+  
+//   });
+
+};
+
+export default SplashPage;

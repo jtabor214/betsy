@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 ruby "3.1.1"
 gem "bcrypt"
+gem "aws-sdk-s3"
 gem "jbuilder"
 gem "faker"
 

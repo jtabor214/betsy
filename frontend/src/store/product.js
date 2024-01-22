@@ -23,12 +23,18 @@ export const removeProduct = (productId) => {
   };
 };
 
+export const selectProduct = (productId) => { return (state) => 
+  state.products[productId] ? state.products[productId] : null ;
+};
+
+export const selectProductsArray = (state) => Object.values(state.products);
+
 export const fetchProducts = () => async dispatch => {
   const response = await fetch(`api/products`);
 
   if (response.ok) {
-    const reports = await response.json();
-    dispatch(receiveProducts(reports));
+    const products = await response.json();
+    dispatch(receiveProducts(products));
   }
 };
 
@@ -36,8 +42,8 @@ export const fetchProduct = (productId) => async dispatch => {
   const response = await fetch(`api/products/${productId}`);
 
   if (response.ok) {
-    const report = await response.json();
-    dispatch(receiveProduct(report));
+    const product = await response.json();
+    dispatch(receiveProduct(product));
   }
 };
 
@@ -73,8 +79,8 @@ export const updateProduct = (product) => async dispatch => {
   }
 };
 
-export const deleteReport = (productId) => async dispatch => {
-  const response = await fetch(`api/reports/${productId}`, {
+export const deleteProduct = (productId) => async dispatch => {
+  const response = await fetch(`api/products/${productId}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
@@ -94,7 +100,7 @@ function productsReducer(state = {}, action) {
   case RECEIVE_PRODUCTS:
     return {
       ...state,
-      ...action.reports,
+      ...action.products,
     };
 
   case RECEIVE_PRODUCT:

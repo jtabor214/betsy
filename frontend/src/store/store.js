@@ -2,10 +2,12 @@ import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import { thunk } from 'redux-thunk';
 import sessionReducer from './session.js';
 import modalsReducer from './modals.js';
+import productsReducer from './product.js';
 
 const rootReducer = combineReducers({
   session: sessionReducer,
   modals: modalsReducer,
+  products: productsReducer,
 });
 
 const configureStore = (preloadedState = {}) => {
