@@ -18,7 +18,7 @@ require "open-uri"
   # Create one user with an easy to remember name, email, and password:
   User.create!(
     name: 'Demo', 
-    email: 'demo@user.io', 
+    email: 'demo@email.com', 
     password: 'password'
   )
   # More users
@@ -42,13 +42,17 @@ require "open-uri"
      filename: "brawl.png"
      )
 
-  # 10.times do 
-  #   Product.create!({
-  #     name: Faker::Commerce.product_name,
-  #     description: Faker::Lorem.sentence,
-  #     price: Faker::Commerce.price(range: 7..350)
-  #   })
-  # end
+  5.times do 
+    product = Product.create!({
+      name: Faker::Commerce.product_name,
+      description: Faker::Lorem.sentence,
+      price: Faker::Commerce.price(range: 7..350)
+    })
+    product.photos.attach(
+      io: URI.open("https://betsy1-seeds.s3.amazonaws.com/brawl.png"),
+       filename: "brawl.png"
+      )
+  end
 
   puts "Done!"
 # end

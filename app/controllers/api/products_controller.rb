@@ -1,4 +1,4 @@
-class ProductsController < ApplicationController
+class Api::ProductsController < ApplicationController
   before_action :require_login, only: [:create, :edit, :update, :destroy]
 
   def index 

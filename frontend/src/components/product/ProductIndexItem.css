@@ -1,8 +1,15 @@
-.product-card-container {
-  border: 1px solid red;
+.product-cards-container {
+  border: 1px solid green;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  
+}
+
+.product-content {
+  padding: 15px;
+  border: 2px solid purple;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

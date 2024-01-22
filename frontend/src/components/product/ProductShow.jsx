@@ -1,23 +1,27 @@
 import { useEffect } from "react";
 import { useParams } from 'react-router-dom';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { selectProduct, fetchProduct } from "../../store/product";
 
 
 const ProductShow = () => {
   const dispatch = useDispatch();
   const { productId } = useParams();
-  const product = selectProduct(productId);
+  const product = useSelector(selectProduct(productId));
 
   useEffect(() => {
     dispatch(fetchProduct(productId));
   }, [dispatch, productId]);
 
+  console.log(productId);
+  console.log(product?.description);
+  // debugger
   return (
     <>
-      <p>{product.name}</p>
-      <p>{product.description}</p>
-      <p>{product.price}</p>
+      <img src={product.photoUrl} alt="" />
+      <p>{product?.name}</p>
+      <p>{product?.description}</p>
+      <p>{product?.price}</p>
     </>
   );
 

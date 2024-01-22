@@ -25,13 +25,36 @@
 
 #quick_look{
   /* font-family: Arial, Helvetica, sans-serif; */
-
   padding-top: 4px;
   padding-bottom: 5px;
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 40px
+}
+
+#quick_look > button {
+  display: inline-block;
+  font-weight: 500;
+  font-size: 12.99px;
+  font: inherit;
+  line-height: 1.4;
+  min-height: 36px;
+  min-width: 36px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: aliceblue;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+}
+
+#quick_look >button:hover{
+  background-color: rgb(216,216,216);
+  transition:  0.3s;
+  transform: skew();
 }
 
 #name{

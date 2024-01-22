@@ -1,4 +1,6 @@
-export const RECEIVE_PRODUCTS = 'RECEIVE_PRODUCT';
+import csrfFetch from "./csrf";
+
+export const RECEIVE_PRODUCTS = 'RECEIVE_PRODUCTS';
 export const RECEIVE_PRODUCT = 'RECEIVE_PRODUCT';
 export const REMOVE_PRODUCT = 'REMOVE_PRODUCT';
 
@@ -30,7 +32,7 @@ export const selectProduct = (productId) => { return (state) =>
 export const selectProductsArray = (state) => Object.values(state.products);
 
 export const fetchProducts = () => async dispatch => {
-  const response = await fetch(`/api/products`);
+  const response = await csrfFetch(`/api/products`);
 
   if (response.ok) {
     const products = await response.json();
@@ -40,11 +42,14 @@ export const fetchProducts = () => async dispatch => {
 };
 
 export const fetchProduct = (productId) => async dispatch => {
-  const response = await fetch(`/api/products/${productId}`);
+  const response = await csrfFetch(`/api/products/${productId}`);
 
   if (response.ok) {
-    const product = await response.json();
-    dispatch(receiveProduct(product));
+    // debugger
+    const data = await response.json();
+    // debugger
+    console.log('gathered');
+    dispatch(receiveProduct(data.product));
   }
 };
 
@@ -96,6 +101,7 @@ export const deleteProduct = (productId) => async dispatch => {
 };
 
 function productsReducer(state = {}, action) {
+  // debugger
   switch (action.type) {
 
   case RECEIVE_PRODUCTS:
@@ -105,6 +111,7 @@ function productsReducer(state = {}, action) {
     };
 
   case RECEIVE_PRODUCT:
+    debugger
     return {
       ...state,
       [action.product.id]: action.product,

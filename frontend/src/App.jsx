@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
-// import Splash from './components/splash/Splash';
+import Splash from './components/splash/Splash';
 // import LoginForm from './SessionModal/LoginForm';
 // import SignupForm from './SessionModal/SignupForm';
 // import ProfileButton from './components/navigation/ProfileButton';
@@ -38,27 +38,23 @@ function Layout() {
 }
 
 const router = createBrowserRouter([
-  {
-    path: '/',
-    element:
-    <>
-      <Layout />
-      <ProductsIndex />
-      <ProductIndexItem />
-    </>,
+  { element: <Layout />,
+    children: [
+      { 
+        path: '/',
+        element:
+          <> 
+            <Splash />
+            <ProductsIndex />
+          </>,
+      },
+      {
+        path: '/products/:productId',
+        element: <ProductShow />,
+      },
+    ],
   },
-  {
-    path: '/:productId',
-    element: <ProductShow />,
-  },
-  // {
-  //   path: 'new',
-  //   element: <ProductForm />,
-  // },
-  // {
-  //   path: ':productId/edit',
-  //   element: <ProductForm />,
-  // },
+ 
 ]);
 
 export default App;

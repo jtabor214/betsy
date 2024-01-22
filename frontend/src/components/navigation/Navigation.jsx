@@ -32,11 +32,11 @@ function Navigation(){
         <button id="cart_button">Cart</button>
       </div>
       <div id="quick_look">
-        <p>Valentine&apos;s Day Gifts</p>
-        <p>Home Favorites</p>
-        <p>Fashion Finds</p>
-        <p>Gift Guides</p>
-        <p>Registry</p>
+        <button>Valentine&apos;s Day Gifts</button>
+        <button>Home Favorites</button>
+        <button>Fashion Finds</button>
+        <button>Gift Guides</button>
+        <button>Registry</button>
       </div>
     </header>
   );
