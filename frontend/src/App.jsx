@@ -1,18 +1,14 @@
 import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
-import Splash from './components/splash/Splash';
-// import LoginForm from './SessionModal/LoginForm';
-// import SignupForm from './SessionModal/SignupForm';
 // import ProfileButton from './components/navigation/ProfileButton';
-
+import * as sessionActions from './store/session';
+import Splash from './components/splash/Splash';
 import Navigation from './components/navigation/Navigation';
 // import ProductForm from './components/product/ProductForm';
 import ProductShow from './components/product/ProductShow';
 import ProductsIndex from './components/product/ProductsIndex';
-import ProductIndexItem from './components/product/ProductIndexItem';
-
-import * as sessionActions from './store/session';
+import ReviewsIndex from './components/Review/ReviewIndex';
 
 
 function App() {

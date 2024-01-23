@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { selectProduct, fetchProduct } from "../../store/product";
 import placeholder from '../../../public/assets/images/placeholder.svg';
+import ReviewsIndex from "../Review/ReviewIndex";
+
 
 
 
@@ -24,6 +26,7 @@ const ProductShow = () => {
       <p>{product?.name}</p>
       <p>{product?.description}</p>
       <p>{product?.price}</p>
+      <p><ReviewsIndex /></p>
     </>
   );
 
