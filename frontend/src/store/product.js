@@ -111,7 +111,7 @@ function productsReducer(state = {}, action) {
     };
 
   case RECEIVE_PRODUCT:
-    debugger
+    // debugger
     return {
       ...state,
       [action.product.id]: action.product,

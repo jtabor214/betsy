@@ -49,7 +49,8 @@ table {
 }
 
 /* body {
-  background-color: #aaaaaa;
+  padding-left: calc(6px * 6) !important;
+  padding-right: calc(6px * 6) !important;
 } */
 
 

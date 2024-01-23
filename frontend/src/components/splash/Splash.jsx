@@ -1,7 +1,7 @@
 // import { useDispatch } from "react-redux";
 // import { fetchProducts } from "../../store/product";
 import './Splash.css';
-import placeholder from '../../../public/assets/images/placeholder.svg';
+
 
 
 const SplashPage = () => {

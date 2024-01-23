@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from "react-redux";
-import { useParams } from 'react-router-dom';
-import { fetchProduct, selectProduct } from '../../store/product';
+import { useDispatch } from "react-redux";
+// import { useParams } from 'react-router-dom';
+import { fetchProduct} from '../../store/product';
 import './ProductIndexItem.css';
 import { useEffect } from 'react';
 import placeholder from '../../../public/assets/images/placeholder.svg';

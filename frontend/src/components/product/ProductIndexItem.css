@@ -17,5 +17,6 @@
 
 #product-img {
   max-width: 100%;
+  border-radius: 2px;
   padding-bottom: 5px;
 }
