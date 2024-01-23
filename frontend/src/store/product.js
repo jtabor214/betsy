@@ -48,7 +48,7 @@ export const fetchProduct = (productId) => async dispatch => {
     // debugger
     const data = await response.json();
     // debugger
-    console.log('gathered');
+
     dispatch(receiveProduct(data.product));
   }
 };
@@ -57,7 +57,7 @@ export const createProduct = (product) => async dispatch => {
   const response = await fetch(`api/products`, {
     method: 'POST',
     body: JSON.stringify(product),
-    header: {
+    headers: {
       'Content-Type': 'application/json',
       'Accept': 'application/json',
     },

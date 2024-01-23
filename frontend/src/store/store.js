@@ -3,11 +3,13 @@ import { thunk } from 'redux-thunk';
 import sessionReducer from './session.js';
 import modalsReducer from './modals.js';
 import productsReducer from './product.js';
+import reviewsReducer from './review.js';
 
 const rootReducer = combineReducers({
   session: sessionReducer,
   modals: modalsReducer,
   products: productsReducer,
+  reviews: reviewsReducer,
 });
 
 const configureStore = (preloadedState = {}) => {
