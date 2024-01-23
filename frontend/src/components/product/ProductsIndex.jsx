@@ -26,11 +26,8 @@ const ProductsIndex = () => {
 
   return (
     <div id='display-product-container'>
-      <div>
-        <h1>Shop by Category</h1>
-        <p>Product&apos;s go inside this section here!</p>
-      </div>
-      <ul>
+      <h1>Shop Handmade Items</h1>
+      <ul id="product-listings">
         {productsList}
       </ul>
     </div>

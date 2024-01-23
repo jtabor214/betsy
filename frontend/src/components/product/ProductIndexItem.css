@@ -1,15 +1,21 @@
 .product-cards-container {
-  border: 1px solid green;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
+  padding-left: 9px;
+  padding-right: 9px;
+  /* border: 2px solid green; */
 }
 
 .product-content {
-  padding: 15px;
-  border: 2px solid purple;
+  width: auto;
+  /* border: 2px solid purple; */
+  border-radius: 2px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
+  text-decoration: none;
+  color: black;
+}
+
+#product-img {
+  max-width: 100%;
+  padding-bottom: 5px;
 }

@@ -44,6 +44,7 @@
 
 .splash-content > button{
   max-width: 114px !important;
+  height: 114px !important;
   width: 114px !important;
   border-radius: 50% !important;
   overflow: hidden !important;
@@ -58,4 +59,8 @@
 
 .splash-background{
   height: 60px;
+}
+
+.spacer{
+  padding-bottom: 60px;
 }

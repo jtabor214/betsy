@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { selectProduct, fetchProduct } from "../../store/product";
+import placeholder from '../../../public/assets/images/placeholder.svg';
+
 
 
 const ProductShow = () => {
@@ -18,7 +20,7 @@ const ProductShow = () => {
   // debugger
   return (
     <>
-      <img src={product.photoUrl} alt="" />
+      <img src={placeholder} alt="" />
       <p>{product?.name}</p>
       <p>{product?.description}</p>
       <p>{product?.price}</p>

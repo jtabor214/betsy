@@ -1,6 +1,8 @@
 // import { useDispatch } from "react-redux";
 // import { fetchProducts } from "../../store/product";
 import './Splash.css';
+import placeholder from '../../../public/assets/images/placeholder.svg';
+
 
 const SplashPage = () => {
 
@@ -17,15 +19,15 @@ const SplashPage = () => {
         </div>
 
         <div className='splash-content'>
-          <button>Image</button>
-          <button>Image</button>
-          <button>Image</button>
-          <button>Image</button>
-          <button>Image</button>
-          <button>Image</button>
+          <button>img</button>
+          <button>img</button>
+          <button>img</button>
+          <button>img</button>
+          <button>img</button>
+          <button>img</button>
         </div>
       </div>
-      
+      <div className='spacer'></div>
     </>
   );
 

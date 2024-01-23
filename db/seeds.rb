@@ -42,7 +42,7 @@ require "open-uri"
      filename: "brawl.png"
      )
 
-  5.times do 
+  14.times do 
     product = Product.create!({
       name: Faker::Commerce.product_name,
       description: Faker::Lorem.sentence,
