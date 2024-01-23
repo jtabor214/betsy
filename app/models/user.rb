@@ -11,6 +11,8 @@ class User < ApplicationRecord
 
 
 
+
+
   def self.find_by_credentials(credential, password)
     field = credential =~ URI::MailTo::EMAIL_REGEXP ? :email : :name
     user = User.find_by(field => credential)

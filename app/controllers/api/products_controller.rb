@@ -26,7 +26,7 @@ class Api::ProductsController < ApplicationController
   end
 
   def update
-    @product = Poem.find_by(id: params[:id])
+    @product = Product.find_by(id: params[:id])
     if @product.user_id == current_user.id 
       if @poem.update(poem_params)
         render :show 

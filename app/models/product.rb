@@ -6,5 +6,7 @@ class Product < ApplicationRecord
 
 
   has_many_attached :photos
+  has_many :reviews
+
   # belongs_to :seller, class_name: 'user', foreign_key: 'seller_id'
 end
