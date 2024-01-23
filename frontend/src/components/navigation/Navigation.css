@@ -47,7 +47,7 @@
   padding-bottom: 9px;
   padding-left: 15px;
   padding-right: 15px;
-  background-color: aliceblue;
+  background-color: white;
   border-radius: 100px;
   border: none;
   cursor: pointer;
@@ -79,7 +79,7 @@
   padding-bottom: 9px;
   padding-left: 15px;
   padding-right: 15px;
-  background-color: aliceblue;
+  background-color: white;
   border-radius: 100px;
   border: none;
   cursor: pointer;
@@ -111,7 +111,7 @@
   padding-right: 15px;
   border: none;
   border-radius: 360px;
-  background-color: aliceblue;
+  background-color: white;
   cursor: pointer;
 }
 
