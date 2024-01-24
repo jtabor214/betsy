@@ -8,7 +8,7 @@ import Navigation from './components/navigation/Navigation';
 // import ProductForm from './components/product/ProductForm';
 import ProductShow from './components/product/ProductShow';
 import ProductsIndex from './components/product/ProductsIndex';
-import ReviewsIndex from './components/Review/ReviewIndex';
+
 
 
 function App() {

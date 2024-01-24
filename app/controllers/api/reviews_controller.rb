@@ -2,6 +2,7 @@ class Api::ReviewsController < ApplicationController
   before_action :require_login, only: [:create, :edit, :update, :destroy]
 
   def index 
+    debugger
     product = Product.find(params[:product_id])
     @reviews = product.reviews
     render :index 
@@ -42,11 +43,13 @@ class Api::ReviewsController < ApplicationController
 
   def destroy 
     @review = current_user.reviews.find_by(id: params[:id])
-    if @review&.destroy 
-      render :show 
-    else 
-      render json: { errors: @product.errors.full_messages }, status: 422
-    end
+    # if @review.user_id == current_user.id 
+      if @review&.destroy 
+        render :show 
+      else 
+        render json: { errors: @product.errors.full_messages }, status: 422
+      end
+    # end
   end
 
   private 

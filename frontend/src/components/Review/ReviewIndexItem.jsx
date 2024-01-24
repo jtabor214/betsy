@@ -1,12 +1,15 @@
+import { useDispatch } from "react-redux";
+import { deleteReview } from "../../store/review";
 
-
-const ReviewIndexItem = () => {
-
+const ReviewIndexItem = ({review}) => {
+  const dispatch = useDispatch();
 
   return (
     <div className='reviews-card-container'>
-      <p>This will be a review</p>
-      <p>This is a review from another user</p>
+
+      <p>{review.rating}</p>
+      <p>{review.body}</p>
+      <button onClick={() => dispatch(deleteReview(review.id))}>Remove Review</button>
     </div>
   );
 };

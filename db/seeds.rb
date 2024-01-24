@@ -6,9 +6,9 @@ require "open-uri"
 # ApplicationRecord.transaction do 
   puts "Destroying tables..."
   # Unnecessary if using `rails db:seed:replant`
-  User.destroy_all
-  Product.destroy_all
   Review.destroy_all
+  Product.destroy_all
+  User.destroy_all
 
   puts "Resetting primary keys..."
   # For easy testing, so that after seeding, the first `User` has `id` of 1
@@ -64,6 +64,16 @@ require "open-uri"
     product_id: 1,
     user_id: 1
   )
+
+  11.times do |num|
+    puts (num + 1) % 2
+    Review.create!({
+      user_id: (num + 1),
+      product_id: (num + 1),
+      body: Faker::Lorem.sentence,
+      rating: [1, 2, 3, 4, 5].sample
+  })
+  end
 
   puts "Done!"
 # end

@@ -1,0 +1,7 @@
+.display-review-container{
+  border: 2px solid blue;
+}
+
+.display-review-container > p {
+  border: 2px solid red;
+}
