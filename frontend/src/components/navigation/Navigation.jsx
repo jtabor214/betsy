@@ -1,9 +1,11 @@
 import { NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import { useState } from 'react';
 import ProfileButton from './ProfileButton';
 import SessionModal from '../../SessionModal/SessionModal';
 import './Navigation.css';
 import { showModal } from '../../store/modals';
+import { fetchResults } from '../../store/search';
 
 function Navigation(){
   const dispatch = useDispatch();
@@ -21,13 +23,25 @@ function Navigation(){
     </>
   );
 
+  const [query, setQuery] = useState('');
+  
+
+  const handleSearch= (e) => {
+    e.preventDefault();
+    
+    dispatch(fetchResults(query));
+  };
+
   return (
     <header id="main_header">
       <div id="nav_bar">
         <SessionModal />
         <NavLink id="name" to="/">Betsy</NavLink>
         <p>Categories</p>
-        <div id="search_bar">Seach Bar</div>
+        <form action="" onSubmit={handleSearch}>
+          <input id="search_bar" value={query} onChange={(e) => setQuery(e.target.value)}></input>
+          <button type='submit'>Search</button>
+        </form>
         {sessionLinks}
         <button id="cart_button">Cart</button>
       </div>

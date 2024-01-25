@@ -2,7 +2,13 @@ class Api::ProductsController < ApplicationController
   before_action :require_login, only: [:create, :edit, :update, :destroy]
 
   def index 
-    @products = Product.all
+    if params[:query]
+      @products = 
+      Product.where("name ILIKE '%#{params[:query]}%'")
+    else
+      @products = Product.all
+    end
+
     render :index 
   end
 

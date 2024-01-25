@@ -1,22 +1,18 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { selectReview, fetchReviews, createReview, updateReview } from '../../store/review';
+import { createReview, updateReview } from '../../store/review';
 import StarRatings from 'react-star-ratings';
 
-const ReviewForm = () => {
+const ReviewForm = ({review, setIsEditing}) => {
   const dispatch = useDispatch();
-  const { reviewId } = useParams();
+  // const { reviewId } = useParams();
   const { productId } = useParams();
-  debugger
-  const review = selectReview(reviewId) || {rating: 0, body:''};
+  // debugger
 
-  useEffect(() => {
-    dispatch(fetchReviews(reviewId));
-  }, [dispatch, reviewId]);
-
-  const [rating, setRating] = useState(review.rating);
-  const [body, setBody] = useState(review.body);
+  const [rating, setRating] = useState(review?.rating || 1);
+  const [body, setBody] = useState(review?.body || '');
+  review ||= {rating, body};
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -27,13 +23,12 @@ const ReviewForm = () => {
       body,
     };
 
-    if (reviewId) {
+    if (newReview.id) {
       dispatch(updateReview(newReview));
+      setIsEditing(false);
     } else {
       dispatch(createReview(newReview, productId));
     }
-
-    dispatch(fetchReviews(reviewId));
   };
 
   return (
@@ -59,7 +54,7 @@ const ReviewForm = () => {
           <input type="textarea" value={body} onChange={(e) => setBody(e.target.value)} />
         </label>
         <br />
-        <button type="submit">{reviewId ? 'Update Review' : 'Create Review'}</button>
+        <button type="submit">{review?.id ? 'Update Review' : 'Create Review'}</button>
       </form>
     </>
   );

@@ -4,12 +4,14 @@ import sessionReducer from './session.js';
 import modalsReducer from './modals.js';
 import productsReducer from './product.js';
 import reviewsReducer from './review.js';
+import searchReducer from './search.js';
 
 const rootReducer = combineReducers({
   session: sessionReducer,
   modals: modalsReducer,
   products: productsReducer,
   reviews: reviewsReducer,
+  search: searchReducer,
 });
 
 const configureStore = (preloadedState = {}) => {

@@ -1,8 +1,8 @@
 class Api::ReviewsController < ApplicationController
-  before_action :require_login, only: [:create, :edit, :update, :destroy]
+  before_action :require_logged_in, only: [:create, :update, :destroy]
 
   def index 
-    debugger
+    # debugger
     product = Product.find(params[:product_id])
     @reviews = product.reviews
     render :index 
@@ -23,12 +23,6 @@ class Api::ReviewsController < ApplicationController
     end
   end
 
-  def edit 
-    product = Product.find(params[:product_id])
-    @review = product.review
-    render :edit
-  end
-
   def update 
     @review = Review.find_by(id: params[:id])
 
@@ -42,7 +36,7 @@ class Api::ReviewsController < ApplicationController
   end
 
   def destroy 
-    @review = current_user.reviews.find_by(id: params[:id])
+    @review = Review.find_by(id: params[:id])
     # if @review.user_id == current_user.id 
       if @review&.destroy 
         render :show 

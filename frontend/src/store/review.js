@@ -42,7 +42,7 @@ export const fetchReviews = (productId) => async dispatch => {
 
 
 export const createReview = (review, productId ) => async dispatch => {
-  debugger
+  // debugger
   const response = await csrfFetch(`/api/products/${productId}/reviews`, {
     method: 'POST',
     body: JSON.stringify(review),
@@ -53,8 +53,8 @@ export const createReview = (review, productId ) => async dispatch => {
   });
 
   if (response.ok) {
-    const newReview = await response.json();
-    dispatch((receiveReview(newReview)));
+    const data = await response.json();
+    dispatch((receiveReview(data.review)));
   }
 };
 
@@ -69,8 +69,8 @@ export const updateReview = (review) => async dispatch => {
   });
 
   if (response.ok) {
-    const editedReview = await response.json();
-    dispatch(receiveReview(editedReview));
+    const data = await response.json();
+    dispatch(receiveReview(data.review));
   }
 };
 
@@ -84,12 +84,12 @@ export const deleteReview = (productId, reviewId) => async dispatch => {
   });
 
   if (response.ok) {
-    const targetReview = await response.json();
-    dispatch(removeReview(targetReview));
+    dispatch(removeReview(reviewId));
   }
 };
 
 function reviewsReducer(state = {}, action) {
+  const newState = {...state};
   switch (action.type) {
 
   case RECEIVE_REVIEWS:
@@ -101,14 +101,13 @@ function reviewsReducer(state = {}, action) {
   case RECEIVE_REVIEW:
     return {
       ...state, 
-      [action.review.id]: action.product,
+      [action.review.id]: action.review,
     };
 
   case REMOVE_REVIEW:
-    return {
-      ...state,
-      [action.reviewId]: undefined,
-    };
+    delete newState[action.reviewId];
+    return newState;
+
 
   default:
     return state;
