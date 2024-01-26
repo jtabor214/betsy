@@ -1,22 +1,26 @@
 .product-cards-container {
   padding-left: 9px;
   padding-right: 9px;
-  /* border: 2px solid green; */
+  border: 2px solid green;
+  width: 20%;
 }
 
 .product-content {
+  height: fit-content;
   width: auto;
-  /* border: 2px solid purple; */
+  border: 2px solid purple;
   border-radius: 2px;
   display: flex;
   flex-direction: column;
   align-items: left;
   text-decoration: none;
   color: black;
+  
 }
 
 #product-img {
   max-width: 100%;
   border-radius: 2px;
   padding-bottom: 5px;
+  object-fit: fill;
 }

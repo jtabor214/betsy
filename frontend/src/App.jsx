@@ -8,6 +8,7 @@ import Navigation from './components/navigation/Navigation';
 // import ProductForm from './components/product/ProductForm';
 import ProductShow from './components/product/ProductShow';
 import ProductsIndex from './components/product/ProductsIndex';
+import SearchIndex from './components/Navigation/SearchIndex';
 
 
 
@@ -46,6 +47,14 @@ const router = createBrowserRouter([
       },
       {
         path: '/products/:productId',
+        element: <ProductShow />,
+      },
+      {
+        path: '/search/:query',
+        element: <SearchIndex />,
+      },
+      {
+        path: '/search/:query/products/:productId',
         element: <ProductShow />,
       },
     ],

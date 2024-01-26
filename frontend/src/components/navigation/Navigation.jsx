@@ -1,14 +1,15 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
 import ProfileButton from './ProfileButton';
-import SessionModal from '../../SessionModal/SessionModal';
+import SessionModal from '../SessionModal/SessionModal';
 import './Navigation.css';
 import { showModal } from '../../store/modals';
 import { fetchResults } from '../../store/search';
 
 function Navigation(){
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const sessionUser = useSelector(state => state.session.user);
 
   const sessionLinks = sessionUser ? (
@@ -24,12 +25,13 @@ function Navigation(){
   );
 
   const [query, setQuery] = useState('');
-  
-
   const handleSearch= (e) => {
     e.preventDefault();
-    
+
     dispatch(fetchResults(query));
+    navigate(`/search/${query}`);
+    
+    //redirect to search/${query}
   };
 
   return (

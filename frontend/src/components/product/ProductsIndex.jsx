@@ -12,13 +12,6 @@ const ProductsIndex = () => {
   }, [dispatch]);
 
   const products = useSelector(selectProductsArray);
-  // const products = [
-  //   {
-  //     id: 1,
-  //     name: 'product',
-  //     price: 4,
-  //   },
-  // ];
 
   const productsList = products.map((product) => {
     return <ProductIndexItem key={product.id} product={product} />;

@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { fetchProduct} from '../../store/product';
 import './ProductIndexItem.css';
 import { useEffect } from 'react';
-import placeholder from '../../../public/assets/images/placeholder.svg';
+// import placeholder from '../../../public/assets/images/placeholder.svg';
 
 const ProductIndexItem = ({product}) => {
   const dispatch = useDispatch();
@@ -19,7 +19,7 @@ const ProductIndexItem = ({product}) => {
   return (
     <div className='product-cards-container'>
       <Link to={`products/${product?.id}`} className='product-content'>
-        <img id='product-img' src={placeholder} alt="image unavailable" />
+        <img id='product-img' src={product?.photoUrl} alt="random image" />
         <h4>{product?.name}</h4>
         <p>${product?.price}</p>
       </Link>

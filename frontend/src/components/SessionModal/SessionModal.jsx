@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import Modal from "../Modal/Modal";
 import LoginForm from "./LoginForm";
 import SignupForm from "./SignupForm";
-import * as modalActions from '../store/modals';
+import * as modalActions from '../../store/modals';
 import './SessionModal.css';
 
 function SessionModal({ onSuccess }) {

@@ -40,7 +40,7 @@ require "open-uri"
     price: 14 
   )
   newProduct.photos.attach(
-    io: URI.open("https://betsy1-seeds.s3.amazonaws.com/brawl.png"),
+    io: URI.open("https://picsum.photos/256"),
      filename: "brawl.png"
      )
 
@@ -50,10 +50,8 @@ require "open-uri"
       description: Faker::Lorem.sentence,
       price: Faker::Commerce.price(range: 7..350)
     })
-    product.photos.attach(
-      io: URI.open("https://betsy1-seeds.s3.amazonaws.com/brawl.png"),
-       filename: "brawl.png"
-      )
+    pic = URI.open("https://picsum.photos/256")
+    product.photos.attach(io: pic, filename: "product#{product.id}_thumbnail.jpg")
   end
 
   puts "Printing reviews..."
@@ -66,7 +64,6 @@ require "open-uri"
   )
 
   11.times do |num|
-    puts (num + 1) % 2
     Review.create!({
       user_id: (num + 1),
       product_id: (num + 1),

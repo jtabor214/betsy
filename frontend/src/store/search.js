@@ -10,6 +10,8 @@ export const receiveResults = (results) => {
   };
 };
 
+export const selectResultsArray = (state) => Object.values(state.search || {});
+
 export const fetchResults = (query) => async dispatch => {
   const response = await csrfFetch(`/api/products?query=${query}`);
 
