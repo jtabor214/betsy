@@ -1,0 +1,11 @@
+.reviews-card-container{
+  position:relative;
+  width: 30%;
+  border: 1px solid black;
+}
+
+#edit-button{
+  position:absolute;
+  top:0;
+  right:0;
+}

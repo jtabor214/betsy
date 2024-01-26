@@ -31,6 +31,7 @@ const ReviewForm = ({review, setIsEditing}) => {
     }
   };
 
+
   return (
     <>
       {/* <h1>{reviewId ? 'Update Post' : 'Create Review'}</h1> */}
@@ -47,8 +48,8 @@ const ReviewForm = ({review, setIsEditing}) => {
             starDimension="20px"
             starSpacing="4px"
           />
-          {/* <input type="number" name="numericInput" onChange={(e) => setRating(e.target.value)} /> */}
         </label>
+          {/* <input type="number" name="numericInput" onChange={(e) => setRating(e.target.value)} /> */}
         <br />
         <label htmlFor="body">Body
           <input type="textarea" value={body} onChange={(e) => setBody(e.target.value)} />

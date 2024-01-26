@@ -4,8 +4,9 @@
 }
 
 #main_header{
+  margin-bottom: 50px;
   width: 100%;
-  border: 2px solid red;
+  border-bottom: 2px solid #d9d9d9;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -17,11 +18,42 @@
   padding-top: 12px;
   padding-left: 36px;
   padding-right: 36px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   gap: 20px;
+}
+
+#category-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  font-size: 13px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#category-container:hover{
+  background-color: rgb(216,216,216);
+  transition:  0.3s;
+  transform: skew();
+}
+
+#category-icon{
+  width: 18px;
+  height: 20px;
+  margin-right: 7px;
 }
 
 
@@ -92,13 +124,10 @@
   /* transform: scale(1.1); */
 }
 
-#search_bar{
-  padding-right: 18px;
-  box-sizing: inherit;
-}
 
 #cart_button{
-  display: inline-block;
+  display: flex;
+  align-items: center;
   font-weight: 500;
   font-size: 12.99px;
   font: inherit;
@@ -119,4 +148,56 @@
   background-color: rgb(216,216,216);
   transition: background-color 0.3s ease;
   /* transform: scale(1.1); */
+}
+
+#cart-icon{
+  width: 25px;
+  height: 25px;
+}
+
+#search-container{
+  display: flex;
+  flex-direction: row;
+}
+
+#search_bar{
+  width: 500px;
+  padding: 10px;
+  border-top: 2px solid black;
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
+  border-right: transparent;
+  border-radius: 30px 0 0 30px;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: .76515px;
+  outline: none;
+}
+
+#search-button{
+  border-top: 2px solid black;
+  border-left: transparent;
+  border-bottom: 2px solid black;
+  border-right: 2px solid black;
+  border-radius: 0 50% 50% 0;
+  height: 48px;
+  width: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  cursor: pointer;
+}
+
+#search-icon{
+  padding: 8px;
+  margin-left: 2px;
+  background-color: #f1641f;
+  border-radius: 50%;
+  
+}
+
+#search-icon:hover{
+  transform: scale(1.1);
+  background-color: #ff996a;
 }

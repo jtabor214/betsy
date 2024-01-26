@@ -6,9 +6,7 @@ import './Splash.css';
 
 const SplashPage = () => {
 
-//   const homePageDisplay = () => ({
-  
-//   });
+
   return (
     <>
       <div className='splash-container'>
@@ -19,12 +17,42 @@ const SplashPage = () => {
         </div>
 
         <div className='splash-content'>
-          <button>img</button>
-          <button>img</button>
-          <button>img</button>
-          <button>img</button>
-          <button>img</button>
-          <button>img</button>
+          <div id="button-container-1">
+            <div id="nav-button-1">
+              <button></button>
+            </div>
+            <p>Valentine&apos;s <br />Day Gifts</p>
+          </div>
+          <div id="button-container-2">
+            <div id="nav-button-2">
+              <button></button>
+            </div>
+            <p>Bracelets</p>
+          </div>
+          <div id="button-container-3">
+            <div id="nav-button-3">
+              <button></button>
+            </div>
+            <p>Home Decor</p>
+          </div>
+          <div id="button-container-4">
+            <div id="nav-button-4">
+              <button></button>
+            </div>
+            <p>Tees & <br /> Sweaters</p>
+          </div>
+          <div id="button-container-5">
+            <div id="nav-button-5">
+              <button></button>
+            </div>
+            <p>Printables</p>
+          </div>
+          <div id="button-container-6">
+            <div id="nav-button-6">
+              <button></button>
+            </div>
+            <p>Up to 40% Off</p>
+          </div>
         </div>
       </div>
       <div className='spacer'></div>

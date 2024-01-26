@@ -1,29 +1,26 @@
 #display-product-container{
   background-color: white;
-  border: 2px solid blue;
   text-align: center;
   font-size: 31px;
   padding-left: calc(6px * 6) !important;
   padding-right: calc(6px * 6) !important;
+  
 }
 
 #product-listings{
-  border: 2px solid green;
+  margin-top: 10px;
   padding: calc(6px * 1.5);
-
   /* padding-left: calc(6px * 6) !important;
   padding-right: calc(6px * 6) !important; */
   /* padding-top: 10px; */
   row-gap: 25px;
   /* column-gap: 15px;  */
   display: flex;
-
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   text-align: left;
   font-size: 14px;
-  
   line-height: 1.6;
 }
 

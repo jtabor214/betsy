@@ -41,49 +41,60 @@ const SignupForm = (/*{ isOpen, onClose}*/) => {
   return (
     <>
       {/* <Modal isOpen={isOpen} onRequestClose={onClose} contentLabel='Sign Up Modal'> */}
-        <h1>Sign Up</h1>
-        <form onSubmit={handleSubmit}>
-          <ul>
-            {errors.map(error => <li key={error}>{error}</li>)}
-          </ul>
-          <label>
-            Email
+      <form className='signup-form' onSubmit={handleSubmit}>
+        <ul>
+          {errors.map(error => <li key={error}>{error}</li>)}
+        </ul>
+        <div className='credential-fields'>
+          <h1>Registration is easy.</h1>
+          <br />
+          <label id='email-field'>
+              Email
             <input
+              id='input-field'
               type="text"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
             />
           </label>
-          <label>
+          <br />
+          <label id='name-field'>
             Name
             <input
+              id='input-field'
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
             />
           </label>
-          <label>
+          <br />
+          <label id='password-field'>
             Password
             <input
+              id='input-field'
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
             />
           </label>
-          <label>
+          <br />
+          <label id='confirm-field'>
             Confirm Password
             <input
+              id='input-field'
               type="password"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               required
             />
           </label>
-          <button type="submit">Sign Up</button>
-        </form>
+        
+          <button id='submit-button' type="submit">Register</button>
+        </div>
+      </form>
       {/* </Modal> */}
     </>
   );

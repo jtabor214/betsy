@@ -25,9 +25,11 @@ const ReviewsIndex = () => {
   
   return (
     <div className='display-review-container'>
-      <p>There will be reviews under this</p>
-      { currentUser ? <ReviewForm /> : null }
-      <div>
+      <div className='create-review-input'>
+        <p>Create a review!</p>
+        { currentUser ? <ReviewForm /> : null }
+      </div>
+      <div >
         {reviews.reverse().filter(review => review.productId == productId).map((review) => (
           <ReviewIndexItem key={review.id} review={review} />
         ))}

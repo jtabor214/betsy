@@ -30,6 +30,16 @@ function LoginForm() {
       });
   };
 
+  const handleDemoLogin = (e) => {
+    e.preventDefault();
+    
+    return dispatch(sessionActions.login({
+      credential: 'demo@email.com',
+      password: 'password',
+    }));
+  };
+
+
   return (
     <>
       <form className="login-form" onSubmit={handleSubmit}>
@@ -62,6 +72,7 @@ function LoginForm() {
           </label>
           <br />
           <button id='submit-button' type="submit">Sign In</button>
+          <button id='demo-button' type="submit" onClick={handleDemoLogin}>Demo User</button>
         </div>
        
       </form>

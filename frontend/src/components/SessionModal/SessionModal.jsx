@@ -25,7 +25,7 @@ function SessionModal({ onSuccess }) {
       <div className="session-modal">
         <button className='back-button' onClick={goBack}>&times;</button>
         <div className="session-modal-header">
-          <h1 id='title'>{modalType === "login" ? "Sign In" : "Register"}</h1>
+          <h1 id='title'>{modalType === "login" ? "Sign In" : "Create your account"}</h1>
           <button id="register-button" onClick={() => dispatch(modalActions.showModal(modalType === "login" ? "signup" : "login"))}>
             {modalType === "login" ? "Register" : "Log in" }
           </button>
