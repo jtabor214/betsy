@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { selectProduct, fetchProduct } from "../../store/product";
-import placeholder from '../../../public/assets/images/placeholder.svg';
 import ReviewsIndex from "../Review/ReviewIndex";
 
 
@@ -22,7 +21,7 @@ const ProductShow = () => {
   // debugger
   return (
     <>
-      <img src={placeholder} alt="" />
+      <img src={product?.photoUrl} alt="random image" />
       <p>{product?.name}</p>
       <p>{product?.description}</p>
       <p>{product?.price}</p>

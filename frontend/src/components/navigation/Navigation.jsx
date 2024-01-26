@@ -39,13 +39,16 @@ function Navigation(){
       <div id="nav_bar">
         <SessionModal />
         <NavLink id="name" to="/">Betsy</NavLink>
-        <p>Categories</p>
-        <form action="" onSubmit={handleSearch}>
-          <input id="search_bar" value={query} onChange={(e) => setQuery(e.target.value)}></input>
-          <button type='submit'>Search</button>
+        <button id="category-container">
+          <img id="category-icon" src="../../../public/assets/images/menu-icon.png" alt="" />
+          <p>Categories</p>
+        </button>
+        <form id="search-container" action="" onSubmit={handleSearch}>
+          <input placeholder="Search for anything"id="search_bar" value={query} onChange={(e) => setQuery(e.target.value)}></input>
+          <button id="search-button"type='submit'><img id="search-icon" src="../../../public/assets/images/search-icon.png" alt="search icon" /></button>
         </form>
         {sessionLinks}
-        <button id="cart_button">Cart</button>
+        <button id="cart_button"><img id="cart-icon" src="../../../public/assets/images/cart-icon.png" alt="cart icon" /></button>
       </div>
       <div id="quick_look">
         <button>Valentine&apos;s Day Gifts</button>

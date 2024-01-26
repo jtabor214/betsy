@@ -7,7 +7,7 @@
 .credential-fields{
   display: flex;
   flex-direction: column;
-  border: 2px solid red;
+  /* border: 2px solid red; */
   padding: 20px;
   width: 350px;
   height: 400px;
@@ -30,6 +30,7 @@
 }
 
 #submit-button{
+  margin-top: 10px;
   display: inline-block;
   height: 50px;
   background: unset;
@@ -42,7 +43,6 @@
   border-radius: 24px;
   cursor: pointer;
   transition: transform 0.2s ease, background-color 0.2s ease;
-
 }
 
 #submit-button:hover{
@@ -74,8 +74,26 @@
   min-width: 0;
 }
 
-#input-field:hover{
+#demo-button{
+  margin-top: 20px;
+  display: inline-block;
+  height: 50px;
+  background: unset;
+  background-color: #f1641f;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2.0;
+  color: white;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
 
+#demo-button:hover{
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  background-color: #ff996a;
+  transform: scale(1.01);
 }
 
 /* #input-field:active{
