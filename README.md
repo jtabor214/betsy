@@ -139,7 +139,7 @@ const SignupForm = () => {
 };
 ```
 
-###Browse 
+### Browse 
 
 Betsy users are able to browse product listings:
 ```js
@@ -231,7 +231,7 @@ export const deleteReview = (productId, reviewId) => async dispatch => {
 };
 ```
 
-###Search Items
+### Search Items
 Through the Navigation Bar, users can search for specific items: 
 ```js
 /* From Navigation.jsx */
@@ -295,7 +295,6 @@ const SearchIndex = () => {
       </ul>
     </div>
   );
-
 };
 ```
 ### Thank you!
