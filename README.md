@@ -1,7 +1,7 @@
 # Betsy
 [Check it out!](https://betsy-0jcd.onrender.com/)
 
-###Introduction
+### Introduction
 Betsy is a clone of the website Etsy. Etsy is, "a global online marketplace, where people come together to make, sell, buy, and collect unique items." A user who creates a profile on Etsy can create a store where they can post product listings, review products, like products, and search or browse the sites inventory. 
 
 * Languages: Javascript, Ruby, HTML, CSS 
@@ -13,7 +13,7 @@ Betsy is a clone of the website Etsy. Etsy is, "a global online marketplace, whe
 
 # MVP
 
-###Create an Account 
+### Create an Account 
 
 Betsy users can create new accounts that save their credientials to a backend database; or log in to an existing account that has already been saved and seeded to that database: 
 ```js
