@@ -3,10 +3,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
 import * as sessionActions from '../../store/session';
 import './SignupForm.css';
-// import Modal from 'react-modal';
 
 
-const SignupForm = (/*{ isOpen, onClose}*/) => {
+
+const SignupForm = () => {
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user);
   const [email, setEmail] = useState("");
@@ -25,10 +25,9 @@ const SignupForm = (/*{ isOpen, onClose}*/) => {
         .catch(async (res) => {
           let data;
           try {
-            // .clone() essentially allows you to read the response body twice
             data = await res.clone().json();
           } catch {
-            data = await res.text(); // Will hit this case if the server is down
+            data = await res.text();
           }
           if (data?.errors) setErrors(data.errors);
           else if (data) setErrors([data]);
@@ -40,7 +39,6 @@ const SignupForm = (/*{ isOpen, onClose}*/) => {
 
   return (
     <>
-      {/* <Modal isOpen={isOpen} onRequestClose={onClose} contentLabel='Sign Up Modal'> */}
       <form className='signup-form' onSubmit={handleSubmit}>
         <ul>
           {errors.map(error => <li key={error}>{error}</li>)}
@@ -95,7 +93,6 @@ const SignupForm = (/*{ isOpen, onClose}*/) => {
           <button id='submit-button' type="submit">Register</button>
         </div>
       </form>
-      {/* </Modal> */}
     </>
   );
 };
