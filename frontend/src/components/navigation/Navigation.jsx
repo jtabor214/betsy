@@ -51,11 +51,11 @@ function Navigation(){
         <button id="cart_button"><i id="cart-icon" className="fa-solid fa-cart-shopping"></i></button>
       </div>
       <div id="quick_look">
-        <button>Valentine&apos;s Day Gifts</button>
-        <button>Home Favorites</button>
-        <button>Fashion Finds</button>
-        <button>Gift Guides</button>
-        <button>Registry</button>
+        <NavLink to="" id="portfolio-link">About Me</NavLink>
+        <NavLink to="https://github.com/jtabor214" id="github-link">Github</NavLink>
+        <NavLink to="https://www.linkedin.com/in/jake-tabor-8913922b3/" id="linkedin-link">LinkedIn</NavLink>
+        {/* <button>Gift Guides</button>
+        <button>Registry</button> */}
       </div>
     </header>
   );

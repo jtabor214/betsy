@@ -65,7 +65,10 @@
   gap: 40px
 }
 
-#quick_look > button {
+#quick_look > button,
+#github-link,
+#linkedin-link,
+#portfolio-link {
   display: inline-block;
   font-weight: 500;
   font-size: 12.99px;
@@ -74,16 +77,20 @@
   min-height: 36px;
   min-width: 36px;
   padding-top: 9px;
-  padding-bottom: 9px;
   padding-left: 15px;
   padding-right: 15px;
   background-color: white;
   border-radius: 100px;
   border: none;
   cursor: pointer;
+  text-decoration: none;
+  color: black
 }
 
-#quick_look > button:hover{
+#quick_look > button:hover,
+#github-link:hover,
+#linkedin-link:hover,
+#portfolio-link:hover {
   background-color: rgb(216,216,216);
   transition:  0.3s;
   transform: skew();
@@ -129,7 +136,7 @@
   align-items: center;
   min-height: 25px;
   min-width: 25px;
-  padding: 9px;
+  padding: 12px;
   border: none;
   border-radius: 360px;
   background-color: white;
@@ -180,6 +187,7 @@
   background: none;
   cursor: pointer;
   color: white;
+  overflow: hidden;
 }
 
 #search-icon{
@@ -187,7 +195,7 @@
   margin-left: 2px;
   background-color: #f1641f;
   border-radius: 50%;
-  
+  font-size: 15;
 }
 
 #search-icon:hover{

@@ -44,7 +44,7 @@ function ProfileButton({ user }) {
           <li>View your profile</li>
           <li>
             <div className='logout-container'>
-              <img id="logout-icon" src="../../../public/assets/images/logout-icon.png" alt="" />
+              <img id="logout-icon" src="/images/logout-icon.png" alt="" />
               <button id="logout-button" onClick={logout}>Sign out</button>
             </div>
           </li>
