@@ -1,5 +1,5 @@
 # Betsy
-[Check it out!](https://betsy-0jcd.onrender.com/)
+[Check it out!](https://betsy-0jcd.onrender.com)
 
 ### Introduction
 Betsy is a clone of the website Etsy. Etsy is, "a global online marketplace, where people come together to make, sell, buy, and collect unique items." A user who creates a profile on Etsy can create a store where they can post product listings, review products, like products, and search or browse the sites inventory. 
