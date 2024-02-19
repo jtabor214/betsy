@@ -34,7 +34,10 @@ function ProfileButton({ user }) {
 
   return (
     <>
-      <button id="button-container" onClick={toggleMenu}><img src="../../../public/assets/images/profile-icon.png" alt="profile icon" id="profile-icon" /></button>
+      <button id="button-container" onClick={toggleMenu}>
+        <i id="profile-icon" className="fa-solid fa-user"></i>
+        <i className="fa-solid fa-caret-down"></i>
+      </button>
       {showMenu && (
         <ul className="profile-dropdown" ref={dropdownRef}>
           <li id="profile-name">{user.name}</li>

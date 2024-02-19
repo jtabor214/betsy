@@ -60,7 +60,7 @@
 
 
 #nav-button-1{
-  background-image: url(../../../public/assets/images/nav-image1.jpg);
+  background-image: url(/images/nav-image1.jpg);
   /* border: 1px solid green; */
   background-size: contain;
   max-width: 114px !important;
@@ -87,7 +87,7 @@
 }
 
 #nav-button-2{
-  background-image: url(../../../public/assets/images/nav-image2.jpg);
+  background-image: url(/images/nav-image2.jpg);
   /* border: 1px solid green; */
   background-size: contain;
   max-width: 114px !important;
@@ -114,7 +114,7 @@
 }
 
 #nav-button-3{
-  background-image: url(../../../public/assets/images/nav-image3.jpg);
+  background-image: url(/images/nav-image3.jpg);
   /* border: 1px solid green; */
   background-size: contain;
   max-width: 114px !important;
@@ -141,7 +141,7 @@
 }
 
 #nav-button-4{
-  background-image: url(../../../public/assets/images/nav-image4.jpg);
+  background-image: url(/images/nav-image4.jpg);
   /* border: 1px solid green; */
   background-size: contain;
   max-width: 114px !important;
@@ -168,7 +168,7 @@
 }
 
 #nav-button-5{
-  background-image: url(../../../public/assets/images/nav-image5.jpg);
+  background-image: url(/images/nav-image5.jpg);
   /* border: 1px solid green; */
   background-size: contain;
   max-width: 114px !important;
@@ -195,7 +195,7 @@
 }
 
 #nav-button-6{
-  background-image: url(../../../public/assets/images/nav-image6.jpg);
+  background-image: url(/images/nav-image6.jpg);
   /* border: 1px solid green; */
   background-size: contain;
   max-width: 114px !important;

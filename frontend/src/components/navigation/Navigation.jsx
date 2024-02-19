@@ -40,15 +40,15 @@ function Navigation(){
         <SessionModal />
         <NavLink id="name" to="/">Betsy</NavLink>
         <button id="category-container">
-          <img id="category-icon" src="../../../public/assets/images/menu-icon.png" alt="" />
+          <i className="fa-solid fa-bars"></i>
           <p>Categories</p>
         </button>
         <form id="search-container" action="" onSubmit={handleSearch}>
           <input placeholder="Search for anything"id="search_bar" value={query} onChange={(e) => setQuery(e.target.value)}></input>
-          <button id="search-button"type='submit'><img id="search-icon" src="../../../public/assets/images/search-icon.png" alt="search icon" /></button>
+          <button id="search-button"type='submit'><i id="search-icon" className="fa-solid fa-magnifying-glass"></i></button>
         </form>
         {sessionLinks}
-        <button id="cart_button"><img id="cart-icon" src="../../../public/assets/images/cart-icon.png" alt="cart icon" /></button>
+        <button id="cart_button"><i id="cart-icon" className="fa-solid fa-cart-shopping"></i></button>
       </div>
       <div id="quick_look">
         <button>Valentine&apos;s Day Gifts</button>
