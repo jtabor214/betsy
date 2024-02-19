@@ -16,9 +16,7 @@ const ProductShow = () => {
     dispatch(fetchProduct(productId));
   }, [dispatch, productId]);
 
-  console.log(productId);
-  console.log(product?.description);
-  // debugger
+
   return (
     <>
       <img src={product?.photoUrl} alt="random image" />
