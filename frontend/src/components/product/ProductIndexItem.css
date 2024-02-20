@@ -1,21 +1,18 @@
 .product-cards-container {
   padding-left: 9px;
   padding-right: 9px;
-
   width: 20%;
 }
 
 .product-content {
   height: fit-content;
   width: auto;
-
   border-radius: 2px;
   display: flex;
   flex-direction: column;
   align-items: left;
   text-decoration: none;
   color: black;
-  
 }
 
 #product-img {
