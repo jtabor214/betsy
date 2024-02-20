@@ -11,8 +11,6 @@ import StarRatings from 'react-star-ratings';
 const ProductIndexItem = ({product}) => {
   const dispatch = useDispatch();
 
-
-
   useEffect(() => {
     dispatch(fetchProduct(product.id));
   }, [dispatch, product.id]);
