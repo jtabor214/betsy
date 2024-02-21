@@ -4,10 +4,10 @@ import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 // import ProfileButton from './components/navigation/ProfileButton';
 import * as sessionActions from './store/session';
 import Splash from './components/splash/Splash';
-import Navigation from './components/navigation/Navigation';
+import Navigation from './components/Navigation/Navigation.jsx';
 // import ProductForm from './components/product/ProductForm';
-import ProductShow from './components/product/ProductShow';
-import ProductsIndex from './components/product/ProductsIndex';
+import ProductShow from './components/Product/ProductShow';
+import ProductsIndex from './components/Product/ProductsIndex';
 import SearchIndex from './components/Navigation/SearchIndex';
 
 

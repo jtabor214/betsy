@@ -41,7 +41,7 @@ function Navigation(){
         <NavLink id="name" to="/">Betsy</NavLink>
         <button id="category-container">
           <i className="fa-solid fa-bars"></i>
-          <p>Categories</p>
+          <p></p>
         </button>
         <form id="search-container" action="" onSubmit={handleSearch}>
           <input placeholder="Search for anything"id="search_bar" value={query} onChange={(e) => setQuery(e.target.value)}></input>

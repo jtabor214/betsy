@@ -15,6 +15,8 @@ export default defineConfig(({ mode }) => ({
     proxy: {
       '/api': 'http://localhost:5000',
     },
+    watch: { usePolling: true },
+    open: true
   },
   build: {
     outDir: '../public',
@@ -23,6 +25,5 @@ export default defineConfig(({ mode }) => ({
   // To automatically open the app in the browser whenever the server starts,
   // uncomment the following lines:
   // server: {
-  //   open: true
   // }
 }));
