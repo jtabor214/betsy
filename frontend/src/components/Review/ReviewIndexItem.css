@@ -1,11 +1,30 @@
 .reviews-card-container{
   position:relative;
-  width: 30%;
-  border: 1px solid black;
+  width: 58%;
+  border-bottom: 1px solid rgba(136, 134, 134, 0.3);
+  font-family: Graphik-Webfont;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 #edit-button{
   position:absolute;
   top:0;
   right:0;
+}
+
+#review-body {
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+
+#product-name{
+  font-size: 12px;
+  font-weight: 600;
+  padding-bottom: 15px;
+  color: rgb(94, 92, 92);
+}
+
+#username {
+  padding-bottom: 15px;
 }

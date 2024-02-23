@@ -1,9 +1,9 @@
-@font-face { 
-  font-family: 'Guardian-EgypTT-Light';
-  src: url('/frontend/public/assets/fonts/Guardian-EgypTT-Light.woff2') format('woff2');
+@font-face {
+  font-family: Graphik-Webfont;
+  src: url('/fonts/Graphik-Regular-Web.woff2') format('woff2');
 }
 
-#main_header{
+#main_header {
   margin-bottom: 50px;
   width: 100%;
   border-bottom: 2px solid #d9d9d9;
@@ -14,7 +14,7 @@
   z-index: 60 !important;
 }
 
-#nav_bar {  
+#nav_bar {
   /* border: 1px solid red; */
   padding-top: 12px;
   padding-left: 36px;
@@ -26,7 +26,7 @@
   gap: 10px;
 }
 
-#category-container{
+#category-container {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -44,18 +44,18 @@
   padding-right: 10px;
 }
 
-#category-container:hover{
-  background-color: rgb(216,216,216);
-  transition:  0.3s;
+#category-container:hover {
+  background-color: rgb(216, 216, 216);
+  transition: 0.3s;
   transform: skew();
 }
 
-#category-container > p {
+#category-container>p {
   margin-left: 4px;
 }
 
 
-#quick_look{
+#quick_look {
   /* font-family: Arial, Helvetica, sans-serif; */
   padding-top: 4px;
   padding-bottom: 5px;
@@ -65,18 +65,19 @@
   gap: 40px
 }
 
-#quick_look > button,
+#quick_look>button,
 #github-link,
 #linkedin-link,
 #portfolio-link {
-  display: inline-block;
-  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 12.99px;
-  font: inherit;
+  /* font-weight: 500; */
+  font-family: Graphik-Webfont;
   line-height: 1.4;
   min-height: 36px;
   min-width: 36px;
-  padding-top: 9px;
   padding-left: 15px;
   padding-right: 15px;
   background-color: white;
@@ -87,28 +88,27 @@
   color: black
 }
 
-#quick_look > button:hover,
+#quick_look>button:hover,
 #github-link:hover,
 #linkedin-link:hover,
 #portfolio-link:hover {
-  background-color: rgb(216,216,216);
-  transition:  0.3s;
+  background-color: rgb(216, 216, 216);
+  transition: 0.3s;
   transform: skew();
 }
 
-#name{
+#name {
   vertical-align: middle;
   font-size: 40px;
-  color: rgb(241,100,31);
+  color: rgb(241, 100, 31);
   text-decoration: none;
-
 }
 
-#sign_in_button{
+#sign_in_button {
+  font-family: Graphik-Webfont;
   display: inline-block;
   font-weight: 500;
-  font-size: 12.99px;
-  font: inherit;
+  font-size: 13px;
   line-height: 1.4;
   min-height: 36px;
   min-width: 36px;
@@ -117,20 +117,20 @@
   padding-left: 15px;
   padding-right: 15px;
   background-color: white;
-  border-radius: 100px;
+  border-radius: 24px;
   border: none;
   cursor: pointer;
 }
 
-#sign_in_button:hover{
-  background-color: rgb(216,216,216);
-  transition:  0.3s;
+#sign_in_button:hover {
+  background-color: rgb(216, 216, 216);
+  transition: 0.3s;
   transform: skew();
   /* transform: scale(1.1); */
 }
 
 
-#cart_button{
+#cart_button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -143,22 +143,22 @@
   cursor: pointer;
 }
 
-#cart_button:hover{
+#cart_button:hover {
   background-color: #CCEBFF;
   transition: background-color 0.3s ease;
   /* transform: scale(1.1); */
 }
 
-#cart-icon{
+#cart-icon {
   font-size: 20px;
 }
 
-#search-container{
+#search-container {
   display: flex;
   flex-direction: row;
 }
 
-#search_bar{
+#search_bar {
   width: 500px;
   padding: 10px;
   border-top: 2px solid black;
@@ -172,7 +172,7 @@
   outline: none;
 }
 
-#search-button{
+#search-button {
   margin-right: 10px;
   border-top: 2px solid black;
   border-left: transparent;
@@ -190,7 +190,7 @@
   overflow: hidden;
 }
 
-#search-icon{
+#search-icon {
   padding: 8px;
   margin-left: 2px;
   background-color: #f1641f;
@@ -198,7 +198,7 @@
   font-size: 15;
 }
 
-#search-icon:hover{
+#search-icon:hover {
   transform: scale(1.1);
   background-color: #ff996a;
 }

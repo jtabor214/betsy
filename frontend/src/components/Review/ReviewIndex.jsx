@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectReviewArray, fetchReviews } from '../../store/review';
 import { useParams } from 'react-router-dom';
@@ -9,30 +9,47 @@ import './ReviewIndex.css';
 const ReviewsIndex = () => {
   const dispatch = useDispatch();
   const { productId } = useParams();
-  console.log(productId);
+  const currentUser = useSelector(state => state.session.user);
+
   useEffect(() => {
     dispatch(fetchReviews(productId));
   }, [dispatch, productId]);
 
-  const currentUser = useSelector(state => {
-    return state.session.user;
-  });
-
+ 
   const reviews = useSelector(selectReviewArray);
-  // const reviewsList = {reviews.reverse().filter(data => data.product_id == productId).map((review) => (
-  //     <ReviewIndexItem key={review?.id} review={review} />
-  //   ))}
+  const reviewCount = reviews.length;
+  const [averageRating, setAverageRating] = useState(0);
+
+  useEffect(() => {
+    let totalRating = 0;
+    reviews.forEach((review) => {
+      totalRating += review.rating;
+    });
+    const average = totalRating / reviewCount;
+    setAverageRating(average || 0)
+  }, [reviews, reviewCount])
   
   return (
     <div className='display-review-container'>
-      <div className='create-review-input'>
-        <p>Create a review!</p>
-        { currentUser ? <ReviewForm /> : null }
+      <p> {reviewCount} reviews {averageRating.toFixed(1)}</p>
+      <div className='review-selections'>
+        <button id="item-reviews">Reviews for this item {reviewCount}</button>
+        <button id="shop-reviews">Reviews for this shop 0</button>
       </div>
       <div >
         {reviews.reverse().filter(review => review.productId == productId).map((review) => (
           <ReviewIndexItem key={review.id} review={review} />
         ))}
+      </div>
+      <div className='create-review-input'>
+        {currentUser ? (
+          <>
+            <p>Create a review</p>
+            <ReviewForm />
+          </>
+        ) : (
+          <p>Sign in to post a review</p>
+        )}
       </div>
     </div>
   );

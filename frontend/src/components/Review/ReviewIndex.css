@@ -1,12 +1,66 @@
+@font-face {
+  font-family: Graphik-Webfont;
+  src: url('/fonts/Graphik-Regular-Web.woff2') format('woff2');
+}
+
 .display-review-container{
   padding: 10px;
   margin-top: 20px;
-  /* border: 2px solid blue; */
+  border: 2px solid purple;
+  max-height: 794px;
+  min-height: 300px;
+  min-height: 300px;
+  min-width: 300px;
+  height: 600px;
+  width: 600px;
+  width: 64%;
 }
 
 .display-review-container > p {
+  border: 1px solid black;
+  width: fit-content;
   font-size: 18px;
-  /* border: 1px solid black; */
+  font-family: Graphik-Webfont;
+}
+
+.review-selections{
+  /* border: 1px solid yellow; */
+  display: flex;
+  flex-direction: row;
+  width: auto;
+  font-family: Graphik-Webfont;
+}
+
+.review-selections>button {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  z-index: 1;
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  text-align: left;
+  outline: none;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  position: relative;
+  font-size: 16px;
+}
+
+#item-reviews {
+  border-bottom: 2px solid black;
+  margin-right: 20px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+
+#shop-reviews:hover {
+ border-bottom: 2px solid rgb(66, 66, 66);
 }
 
 .create-review-input{
