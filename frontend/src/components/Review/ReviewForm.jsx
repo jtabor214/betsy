@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { createReview, updateReview } from '../../store/review';
 import StarRatings from 'react-star-ratings';
+import './ReviewForm.css'
 // import * as reviewActions from '../../store/review';
 
 const ReviewForm = ({review, setIsEditing}) => {
@@ -67,7 +68,9 @@ const ReviewForm = ({review, setIsEditing}) => {
         <br />
         <label htmlFor="body">Review:</label>
         <br />
-        <input type="textarea" 
+        <input 
+          id="review-form-body"
+          type="textarea" 
           value={body} 
           onChange={(e) => setBody(e.target.value)}
         />

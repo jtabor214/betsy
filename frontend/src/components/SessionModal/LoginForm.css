@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Graphik-Webfont;
+  src: url('/fonts/Graphik-Regular-Web.woff2') format('woff2');
+}
+
 .login-form {
   display: flex;
   justify-content: center;
@@ -5,25 +10,20 @@
 }
 
 .credential-fields{
+  /* border: 2px solid red; */
   display: flex;
   flex-direction: column;
-  /* border: 2px solid red; */
   padding: 20px;
   width: 350px;
   height: 400px;
   border-radius: 24px;
-  
+  font-family: Graphik-Webfont;;
 }
 
-#email-field{
-  margin-bottom: 6px;
-  font-size: 14px;
-  text-align: left;
-  font-weight: 560;
-}
-
+#email-field,
 #password-field{
   margin-bottom: 6px;
+  padding: 5px;
   font-size: 14px;
   text-align: left;
   font-weight: 560;

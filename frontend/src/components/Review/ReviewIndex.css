@@ -6,7 +6,7 @@
 .display-review-container{
   padding: 10px;
   margin-top: 20px;
-  border: 2px solid purple;
+  /* border: 2px solid purple; */
   max-height: 794px;
   min-height: 300px;
   min-height: 300px;
@@ -14,10 +14,12 @@
   height: 600px;
   width: 600px;
   width: 64%;
+  overflow: auto;
 }
 
 .display-review-container > p {
-  border: 1px solid black;
+  /* border: 1px solid black; */
+  margin-bottom: 30px;
   width: fit-content;
   font-size: 18px;
   font-family: Graphik-Webfont;
@@ -51,6 +53,10 @@
   font-size: 16px;
 }
 
+#average-rating {
+  margin-left: 20px;
+}
+
 #item-reviews {
   border-bottom: 2px solid black;
   margin-right: 20px;
@@ -64,8 +70,8 @@
 }
 
 .create-review-input{
-  width: 30%;
-
+  font-family: Graphik-Webfont;
+  width: 60%;
   border: 1px solid black;
 
 }

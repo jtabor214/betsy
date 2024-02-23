@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import { selectProduct, fetchProduct } from "../../store/product";
 import ReviewForm from "./ReviewForm";
 import StarRatings from 'react-star-ratings';
+
 import "./ReviewIndexItem.css";
 
 
@@ -51,6 +52,7 @@ const ReviewIndexItem = ({review}) => {
           <p id="review-body">{review.body}</p>
           <p id="product-name">Purchased Item: {product?.name} </p>
           <p id="username">username</p> 
+
           {currentUser?.id === review.userId ? 
           <button onClick={() => dispatch(deleteReview(review.productId, review.id))}>Remove Review</button> 
           : null }
