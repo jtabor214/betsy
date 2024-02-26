@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Graphik-Webfont;
+  src: url('/fonts/Graphik-Regular-Web.woff2') format('woff2');
+}
+
 #button-container {
   padding: 8px;
   display: flex;
@@ -36,49 +41,56 @@
   cursor: pointer;  
 }
 
-
-#profile-name{
-  font-size: 18px;
-  font-weight: 600;
-}
-
 .profile-dropdown{
-  /* position: absolute; */
-  top: 100%;
-  right: 0;
+  position: absolute;
   border: 1px solid #ccc;
+  background-color: white;
   border-radius: 20px;
-  padding: 10px;
   list-style: none;
   z-index: 10;
+  font-family: Graphik-Webfont;
 }
 
-.profile-dropdown li {
-  padding: 4px;
+.dropdown-header{
+  /* border: 1px solid black; */
+  border-bottom: 1px solid rgb(212,212,212);
+  padding: 20px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  background-color: rgb(204,235,255);
+  color: rgb(55,59,61);
 }
 
-.logout-container{
+#profile-name{
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: .08px;
+}
+
+.profile-dropdown p {
+  font-size: 14px;
+}
+
+.logout-container{ 
+  /* border: 1px solid black; */
+  padding: 20px;
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
-
 }
 
 #logout-button{
+
+  font-family: Graphik-Webfont;
   background: none;
   border: none;
-}
-
-.logout-container:hover{
-  background-color: rgb(216,216,216);
+  cursor: pointer;
 }
 
 #logout_icon{
   width: 5px;
   height: 3px;
-  /* margin-right: 4px; */
 }
 
 

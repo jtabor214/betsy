@@ -40,8 +40,10 @@ function ProfileButton({ user }) {
       </button>
       {showMenu && (
         <ul className="profile-dropdown" ref={dropdownRef}>
-          <li id="profile-name">{user.name}</li>
-          <li>View your profile</li>
+          <div className='dropdown-header'>
+            <li id="profile-name">{user.name}</li>
+            <p>View your profile</p>
+          </div>
           <li>
             <div className='logout-container'>
               <img id="logout-icon" src="/images/logout-icon.png" alt="" />
