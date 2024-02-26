@@ -64,14 +64,45 @@
   padding-bottom: 12px;
 }
 
+#shop-reviews {
+  border-bottom: 2px solid transparent;
+  /* transform: scaleX(0); */
+}
+
 
 #shop-reviews:hover {
  border-bottom: 2px solid rgb(66, 66, 66);
+ transition: transform 250ms ease-in-out;
 }
 
 .create-review-input{
   font-family: Graphik-Webfont;
   width: 60%;
-  border: 1px solid black;
+  /* border: 1px solid black; */
+}
 
+.create-review-input p {
+  font-weight: 600;
+}
+
+#create-review-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  font-size: 15px;
+  font-family: Graphik-Webfont;
+  line-height: 1.5;
+  min-height: 36px;
+  min-width: 36px;
+  background-color: white;
+  border-radius: 100px;
+  border: 1px solid black;
+  cursor: pointer;
+  text-decoration: none;
+  color: black
+}
+
+#create-review-button:hover {
+  scale: 1.05;
 }

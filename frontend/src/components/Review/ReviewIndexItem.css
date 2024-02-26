@@ -9,6 +9,9 @@
 
 #edit-button{
   position:absolute;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
   top:0;
   right:0;
 }

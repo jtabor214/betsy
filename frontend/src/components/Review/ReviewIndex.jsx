@@ -22,6 +22,7 @@ const ReviewsIndex = () => {
   const reviews = useSelector(selectReviewArray);
   const reviewCount = reviews.length;
   const [averageRating, setAverageRating] = useState(0);
+  const [showReviewForm, setShowReviewForm] = useState(false)
   // const [data, setData] = useState([]);
   // const [currentPage, setCurrentPage] = useState(0)
   // const [totalPages, setTotalPages] = useState(0)
@@ -66,6 +67,16 @@ const ReviewsIndex = () => {
               />
           </label>
       </p>
+          <div className='create-review-input'>
+            {currentUser ? (
+              <>
+                <button id="create-review-button"onClick={() => setShowReviewForm(!showReviewForm)}>Leave a review</button>
+                {showReviewForm && <ReviewForm />}
+              </>
+            ) : (
+              <p>Sign in to post a review</p>
+            )}
+          </div>
       <div className='review-selections'>
         <button id="item-reviews">Reviews for this item {reviewCount}</button>
         <button id="shop-reviews">Reviews for this shop 0</button>
@@ -82,16 +93,6 @@ const ReviewsIndex = () => {
           nextLabel={">>"}
           breakLabel={"..."}
         /> */}
-      </div>
-      <div className='create-review-input'>
-        {currentUser ? (
-          <>
-            <p>Leave a review</p>
-            <ReviewForm />
-          </>
-        ) : (
-          <p>Sign in to post a review</p>
-        )}
       </div>
     </div>
   );

@@ -36,7 +36,7 @@ const ReviewIndexItem = ({review}) => {
     <div className='reviews-card-container'>
       { isEditing ? <ReviewForm review={review} setIsEditing={setIsEditing} /> : 
         <div className="review-card">
-          {currentUser?.id === review.userId ? <button id="edit-button" onClick={() => setIsEditing(true)}>Edit</button> : null }
+          {currentUser?.id === review.userId ? <button id="edit-button" onClick={() => setIsEditing(true)}><i className="fa-regular fa-pen-to-square"></i></button> : null }
           <label htmlFor="" id="stars">
             <StarRatings
               rating={rating}
@@ -51,7 +51,7 @@ const ReviewIndexItem = ({review}) => {
           </label>
           <p id="review-body">{review.body}</p>
           <p id="product-name">Purchased Item: {product?.name} </p>
-          <p id="username">username</p> 
+          <p id="username">user {review.userId} </p> 
 
           {currentUser?.id === review.userId ? 
           <button onClick={() => dispatch(deleteReview(review.productId, review.id))}>Remove Review</button> 
