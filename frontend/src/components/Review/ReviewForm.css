@@ -1,4 +1,32 @@
 #review-form-body {
-    width: 90%;
-    height: 200px;
+    margin-top: 10px;
+    padding: 6px;
+    border-radius: 5px;
+    min-width: 400px;
+    min-height: 200px;
+    word-break: break-all;
+    font-size: 15px;
+}
+
+
+#submit-review-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    font-size: 15px;
+    font-family: Graphik-Webfont;
+    line-height: 1.5;
+    min-height: 36px;
+    min-width: 36px;
+    background-color: white;
+    border-radius: 100px;
+    border: 1px solid black;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
+#submit-review-button:hover{
+    scale: 1.05;
 }

@@ -28,6 +28,14 @@ const ReviewsIndex = () => {
   // const [totalPages, setTotalPages] = useState(0)
   // const itemsPerPage = 1
   
+  const toggleReviewForm = () => {
+    setShowReviewForm(prevState => !prevState);
+  };
+
+  const handleCloseReviewForm = () => {
+    setShowReviewForm(false);
+  };
+
   useEffect(() => {
     let totalRating = 0;
     reviews.forEach((review) => {
@@ -67,16 +75,18 @@ const ReviewsIndex = () => {
               />
           </label>
       </p>
-          <div className='create-review-input'>
-            {currentUser ? (
-              <>
-                <button id="create-review-button"onClick={() => setShowReviewForm(!showReviewForm)}>Leave a review</button>
-                {showReviewForm && <ReviewForm />}
-              </>
-            ) : (
-              <p>Sign in to post a review</p>
-            )}
-          </div>
+      <div className='create-review-input'>
+        {currentUser && !showReviewForm && (
+          <button id="open-review-button" onClick={toggleReviewForm}>Leave a Review</button>
+        )}
+        {currentUser && showReviewForm && (
+          <button id="close-review-form" onClick={toggleReviewForm}>Close Review</button>
+        )}
+        {!currentUser && !showReviewForm && (
+          <button disabled>Sign in to post a review</button>
+        )}
+          {showReviewForm && <ReviewForm closeReview={handleCloseReviewForm} />}
+      </div>
       <div className='review-selections'>
         <button id="item-reviews">Reviews for this item {reviewCount}</button>
         <button id="shop-reviews">Reviews for this shop 0</button>

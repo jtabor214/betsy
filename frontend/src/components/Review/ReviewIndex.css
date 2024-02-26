@@ -85,7 +85,8 @@
   font-weight: 600;
 }
 
-#create-review-button{
+#close-review-form,
+#open-review-button{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -103,6 +104,7 @@
   color: black
 }
 
-#create-review-button:hover {
+#close-review-form:hover,
+#open-review-button:hover {
   scale: 1.05;
 }

@@ -6,7 +6,7 @@ import StarRatings from 'react-star-ratings';
 import './ReviewForm.css'
 // import * as reviewActions from '../../store/review';
 
-const ReviewForm = ({review, setIsEditing}) => {
+const ReviewForm = ({review, setIsEditing, closeReview}) => {
   const dispatch = useDispatch();
   // const { reviewId } = useParams();
   const { productId } = useParams();
@@ -41,6 +41,7 @@ const ReviewForm = ({review, setIsEditing}) => {
       setIsEditing(false);
     } else {
       dispatch(createReview(newReview, productId));
+      closeReview();
     }
   };
 
@@ -68,16 +69,17 @@ const ReviewForm = ({review, setIsEditing}) => {
         <br />
         <label htmlFor="body">Review:</label>
         <br />
-        <input 
+        <textarea 
           id="review-form-body"
-          type="textarea" 
+          rows="4" 
+          cols="50"
           value={body} 
           onChange={(e) => setBody(e.target.value)}
         />
         <br />
         <span className="error-message">{errors.body}</span>
         <br />
-        <button type="submit">{review?.id ? 'Update Review' : 'Create Review'}</button>
+        <button id="submit-review-button" type="submit">{review?.id ? 'Update Review' : 'Create Review'}</button>
       </form>
     </>
   );

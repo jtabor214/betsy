@@ -54,7 +54,7 @@ const ReviewIndexItem = ({review}) => {
           <p id="username">user {review.userId} </p> 
 
           {currentUser?.id === review.userId ? 
-          <button onClick={() => dispatch(deleteReview(review.productId, review.id))}>Remove Review</button> 
+          <button id="remove-review-button" onClick={() => dispatch(deleteReview(review.productId, review.id))}>Remove Review</button> 
           : null }
         </div>
       }
