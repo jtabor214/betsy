@@ -48,10 +48,12 @@ function Navigation(){
           <button id="search-button"type='submit'><i id="search-icon" className="fa-solid fa-magnifying-glass"></i></button>
         </form>
         {sessionLinks}
+        <NavLink id="placeholder-link" to="/404">
         <button id="cart_button"><i id="cart-icon" className="fa-solid fa-cart-shopping"></i></button>
+        </NavLink>
       </div>
       <div id="quick_look">
-        <NavLink to="" id="portfolio-link">About Me</NavLink>
+        <NavLink to="/404" id="portfolio-link">About Me</NavLink>
         <NavLink to="https://github.com/jtabor214" id="github-link">Github</NavLink>
         <NavLink to="https://www.linkedin.com/in/jake-tabor-8913922b3/" id="linkedin-link">LinkedIn</NavLink>
         {/* <button>Gift Guides</button>

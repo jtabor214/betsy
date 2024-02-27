@@ -83,7 +83,7 @@ const ReviewsIndex = () => {
           <button id="close-review-form" onClick={toggleReviewForm}>Close Review</button>
         )}
         {!currentUser && !showReviewForm && (
-          <button disabled>Sign in to post a review</button>
+          <p>Sign in to post a review</p>
         )}
           {showReviewForm && <ReviewForm closeReview={handleCloseReviewForm} />}
       </div>

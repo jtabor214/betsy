@@ -9,6 +9,7 @@ import Navigation from './components/Navigation/Navigation.jsx';
 import ProductShow from './components/Product/ProductShow';
 import ProductsIndex from './components/Product/ProductsIndex';
 import SearchIndex from './components/Navigation/SearchIndex';
+import NoPage from './components/NoPage/NoPage.jsx';
 
 
 
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
         path: '/search/:query/products/:productId',
         element: <ProductShow />,
       },
+      {
+        path: '/404',
+        element: <NoPage />
+      }
     ],
   },
  

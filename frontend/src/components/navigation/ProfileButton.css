@@ -49,6 +49,7 @@
   list-style: none;
   z-index: 10;
   font-family: Graphik-Webfont;
+  box-shadow: 0px 0px 10px rgb(55,59,61, 0.5);
 }
 
 .dropdown-header{
@@ -59,6 +60,7 @@
   border-top-left-radius: 20px;
   background-color: rgb(204,235,255);
   color: rgb(55,59,61);
+  
 }
 
 #profile-name{

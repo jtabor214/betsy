@@ -1,0 +1,25 @@
+@font-face {
+    font-family: Graphik-Webfont;
+    src: url('/fonts/Graphik-Regular-Web.woff2') format('woff2');
+  }
+
+.error-page{
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Graphik-Webfont;
+}
+
+.error-page h1 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: 600;
+    color: rgb(150, 150, 150);
+}
+
+.error-page p {
+    color: rgb(187, 187, 187)
+}
+

@@ -1,7 +1,7 @@
-/* @font-face {
-  font-family: 'Guardian-EgypTT-Light.woff2';
-  src: url('/frontend/public/assets/fonts/Guardian-EgypTT-Light.woff2') format('woff2');
-} */
+@font-face {
+  font-family: Graphik-Webfont;
+  src: url('/fonts/Graphik-Regular-Web.woff2') format('woff2');
+}
 
 .splash-container{
   display: flex;
@@ -23,7 +23,7 @@
 
 .splash-header{
   position: absolute;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Graphik-Webfont;
   font-weight: 500;
   font-size: 31px;
   line-height: 1.1;
@@ -55,7 +55,7 @@
   flex-direction: column;
   align-items: center;
   gap: 10px;
-
+  
 }
 
 
@@ -67,9 +67,10 @@
   height: 114px !important;
   width: 114px !important;
   border-radius: 50% !important;
-  border-style: dashed;
+  border: none;
   overflow: hidden !important;
   background-color: white;
+  text-decoration: none;
   cursor: pointer;
   transition: transform 0.2s ease;
 }
@@ -94,9 +95,10 @@
   height: 114px !important;
   width: 114px !important;
   border-radius: 50% !important;
-  border-style: dashed;
+  border: none;  
   overflow: hidden !important;
   background-color: white;
+  text-decoration: none;
   cursor: pointer;
   transition: transform 0.2s ease;
 }
@@ -121,9 +123,10 @@
   height: 114px !important;
   width: 114px !important;
   border-radius: 50% !important;
-  border-style: dashed;
+  border: none;  
   overflow: hidden !important;
   background-color: white;
+  text-decoration: none;
   cursor: pointer;
   transition: transform 0.2s ease;
 }
@@ -148,9 +151,10 @@
   height: 114px !important;
   width: 114px !important;
   border-radius: 50% !important;
-  border-style: dashed;
+  border: none;  
   overflow: hidden !important;
   background-color: white;
+  text-decoration: none;
   cursor: pointer;
   transition: transform 0.2s ease;
 }
@@ -175,9 +179,10 @@
   height: 114px !important;
   width: 114px !important;
   border-radius: 50% !important;
-  border-style: dashed;
+  border: none;  
   overflow: hidden !important;
   background-color: white;
+  text-decoration: none;
   cursor: pointer;
   transition: transform 0.2s ease;
 }
@@ -202,9 +207,10 @@
   height: 114px !important;
   width: 114px !important;
   border-radius: 50% !important;
-  border-style: dashed;
+  border: none;  
   overflow: hidden !important;
   background-color: white;
+  text-decoration: none;
   cursor: pointer;
   transition: transform 0.2s ease;
 }

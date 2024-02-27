@@ -1,5 +1,6 @@
 // import { useDispatch } from "react-redux";
 // import { fetchProducts } from "../../store/product";
+import { NavLink } from 'react-router-dom';
 import './Splash.css';
 
 
@@ -18,38 +19,39 @@ const SplashPage = () => {
 
         <div className='splash-content'>
           <div id="button-container-1">
-            <div id="nav-button-1">
-              <button></button>
+            <div>
+              <NavLink to="/404"><button id="nav-button-1"></button></NavLink>
             </div>
             <p>Valentine&apos;s <br />Day Gifts</p>
           </div>
+        
           <div id="button-container-2">
-            <div id="nav-button-2">
-              <button></button>
+            <div >
+            <NavLink to="/404"><button id="nav-button-2"></button></NavLink>
             </div>
             <p>Bracelets</p>
           </div>
           <div id="button-container-3">
-            <div id="nav-button-3">
-              <button></button>
+            <div >
+              <NavLink to="/404"><button id="nav-button-3"></button></NavLink>
             </div>
             <p>Home Decor</p>
           </div>
           <div id="button-container-4">
-            <div id="nav-button-4">
-              <button></button>
+            <div>
+              <NavLink to="/404"><button id="nav-button-4"></button></NavLink>
             </div>
             <p>Tees & <br /> Sweaters</p>
           </div>
           <div id="button-container-5">
-            <div id="nav-button-5">
-              <button></button>
+            <div>
+            <NavLink to="/404"><button id="nav-button-5"></button></NavLink>
             </div>
             <p>Printables</p>
           </div>
           <div id="button-container-6">
-            <div id="nav-button-6">
-              <button></button>
+            <div>
+            <NavLink to="/404"><button id="nav-button-6"></button></NavLink>
             </div>
             <p>Up to 40% Off</p>
           </div>
