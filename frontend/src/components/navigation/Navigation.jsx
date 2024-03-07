@@ -39,10 +39,10 @@ function Navigation(){
       <div id="nav_bar">
         <SessionModal />
         <NavLink id="name" to="/">Betsy</NavLink>
-        <button id="category-container">
+        {/* <button id="category-container">
           <i className="fa-solid fa-bars"></i>
           <p>Categories</p>
-        </button>
+        </button> */}
         <form id="search-container" action="" onSubmit={handleSearch}>
           <input placeholder="Search for anything"id="search_bar" value={query} onChange={(e) => setQuery(e.target.value)}></input>
           <button id="search-button"type='submit'><i id="search-icon" className="fa-solid fa-magnifying-glass"></i></button>
@@ -53,7 +53,7 @@ function Navigation(){
         </NavLink>
       </div>
       <div id="quick_look">
-        <NavLink to="/404" id="portfolio-link">About Me</NavLink>
+        <NavLink to="https://jtabor214.github.io/portfolio/" id="portfolio-link">About Me</NavLink>
         <NavLink to="https://github.com/jtabor214" id="github-link">Github</NavLink>
         <NavLink to="https://www.linkedin.com/in/jake-tabor-8913922b3/" id="linkedin-link">LinkedIn</NavLink>
         {/* <button>Gift Guides</button>
