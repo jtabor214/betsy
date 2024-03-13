@@ -10,6 +10,7 @@ import ProductShow from './components/Product/ProductShow';
 import ProductsIndex from './components/Product/ProductsIndex';
 import SearchIndex from './components/Navigation/SearchIndex';
 import NoPage from './components/NoPage/NoPage.jsx';
+import CartIndex from './components/Cart/CartIndex.jsx';
 
 
 
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
       {
         path: '/search/:query/products/:productId',
         element: <ProductShow />,
+      },
+      {
+        path: '/cart/:userId',
+        element: <CartIndex />
       },
       {
         path: '/404',

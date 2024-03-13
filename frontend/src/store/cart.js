@@ -1,4 +1,5 @@
 import csrfFetch from "./csrf";
+import { createSelector } from 'reselect';
 
 export const RECEIVE_CART = "cart/RECIEVE_CART";
 export const RECEIVE_CART_ITEM = "cart/RECEIVE_CART_ITEM";
@@ -32,6 +33,11 @@ export const selectCartItem = (cartItemId) => { return (state) =>
 
 export const selectCartItems = (state) => state?.cart || {}; 
 
+export const memoizedCartItems = createSelector(
+	[selectCartItems],
+	(cartItems) => Object.values(cartItems)
+)
+
 export const fetchCart = () => async (dispatch) => {
 	const response = await csrfFetch(`/api/carts`);
 
@@ -55,8 +61,8 @@ export const createCartItem = (cartItem) => async (dispatch) => {
 		method: 'POST',
 		body: JSON.stringify(cartItem),
 		headers: {
-		  'Content-Type': 'application/json',
-		  'Accept': 'application/json',
+		'Content-Type': 'application/json',
+		'Accept': 'application/json',
 		},
 	});
 
@@ -71,8 +77,8 @@ export const updateCartItem = (cartItem) => async (dispatch) => {
 		method: 'PATCH',
 		body: JSON.stringify(cartItem),
 		headers: {
-		  'Content-Type': 'application/json',
-		  'Accept': 'application/json',
+		'Content-Type': 'application/json',
+		'Accept': 'application/json',
 		},
 	});
 
@@ -87,8 +93,8 @@ export const deleteCartItem = (cartItemId) => async (dispatch) => {
 		method: 'DELETE',
 		body: JSON.stringify(cartItemId),
 		headers: {
-		  'Content-Type': 'application/json',
-		  'Accept': 'application/json',
+		'Content-Type': 'application/json',
+		'Accept': 'application/json',
 		},
 	});
 
@@ -104,10 +110,10 @@ const cartReducer = (state = {}, action) => {
 
 	case RECEIVE_CART:
 		return {
-			...state,
-			...action.cartItem || {}
+		...state,
+		...action.cartItem || {}
 		};
-
+	
 	case RECEIVE_CART_ITEM:
 		return {
 			...state,
