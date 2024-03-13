@@ -49,7 +49,7 @@ function Navigation(){
         </form>
         {sessionLinks}
         <NavLink id="placeholder-link" to="/404">
-        <button id="cart_button"><i id="cart-icon" className="fa-solid fa-cart-shopping"></i></button>
+        <NavLink id="cart_NavLink" to="/cart/`{:userId}`"><i id="cart-icon" className="fa-solid fa-cart-shopping"></i></NavLink>
         </NavLink>
       </div>
       <div id="quick_look">

@@ -71,8 +71,8 @@ const ProductShow = () => {
               <option value="5">5</option>
             </select>
           </div>
-          <div id="add-to-cart-btn">
-            <button onClick={handleAddCartItem}>Add to cart</button>
+          <div id="add-to-cart-btn-ct">
+            <button onClick={handleAddCartItem} id="add-to-cart-btn">Add to cart</button>
           </div>
         </div>
       </div>
