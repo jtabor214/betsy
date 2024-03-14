@@ -45,10 +45,7 @@ export const fetchProduct = (productId) => async dispatch => {
   const response = await csrfFetch(`/api/products/${productId}`);
 
   if (response.ok) {
-    // debugger
     const data = await response.json();
-    // debugger
-
     dispatch(receiveProduct(data.product));
   }
 };
