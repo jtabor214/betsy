@@ -11,13 +11,13 @@ import "./ReviewIndexItem.css";
 
 const ReviewIndexItem = ({review}) => {
   const dispatch = useDispatch();
-  const { productId } = useParams();
-  const product = useSelector(selectProduct(productId));
+  const { product_id } = useParams();
+  const product = useSelector(selectProduct(product_id));
   const currentUser = useSelector(state => state.session.user);
 
   useEffect(() => {
-    dispatch(fetchProduct(productId));
-  }, [dispatch, productId]);
+    dispatch(fetchProduct(product_id));
+  }, [dispatch, product_id]);
 
 
   const [isEditing, setIsEditing] = useState(false);
@@ -54,7 +54,7 @@ const ReviewIndexItem = ({review}) => {
           <p id="username">user {review.userId} </p> 
 
           {currentUser?.id === review.userId ? 
-          <button id="remove-review-button" onClick={() => dispatch(deleteReview(review.productId, review.id))}>Remove Review</button> 
+          <button id="remove-review-button" onClick={() => dispatch(deleteReview(review.product_id, review.id))}>Remove Review</button> 
           : null }
         </div>
       }

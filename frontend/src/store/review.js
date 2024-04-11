@@ -31,8 +31,8 @@ export const selectReview = (reviewId) => { return (state) =>
 
 export const selectReviewArray = (state) => Object.values(state.reviews);
 
-export const fetchReviews = (productId) => async dispatch => {
-  const response = await csrfFetch(`/api/products/${productId}/reviews`);
+export const fetchReviews = (product_id) => async dispatch => {
+  const response = await csrfFetch(`/api/products/${product_id}/reviews`);
 
   if (response.ok) {
     const reviews = await response.json();
@@ -41,9 +41,9 @@ export const fetchReviews = (productId) => async dispatch => {
 };
 
 
-export const createReview = (review, productId ) => async dispatch => {
+export const createReview = (review, product_id ) => async dispatch => {
   // debugger
-  const response = await csrfFetch(`/api/products/${productId}/reviews`, {
+  const response = await csrfFetch(`/api/products/${product_id}/reviews`, {
     method: 'POST',
     body: JSON.stringify(review),
     headers: {
@@ -74,8 +74,8 @@ export const updateReview = (review) => async dispatch => {
   }
 };
 
-export const deleteReview = (productId, reviewId) => async dispatch => {
-  const response = await csrfFetch(`/api/products/${productId}/reviews/${reviewId}`, {
+export const deleteReview = (product_id, reviewId) => async dispatch => {
+  const response = await csrfFetch(`/api/products/${product_id}/reviews/${reviewId}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',

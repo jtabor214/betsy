@@ -18,15 +18,15 @@ export const receiveProduct = (product) => {
   }; 
 };
 
-export const removeProduct = (productId) => {
+export const removeProduct = (product_id) => {
   return {
     type: REMOVE_PRODUCT,
-    productId: productId,
+    product_id: product_id,
   };
 };
 
-export const selectProduct = (productId) => { return (state) => 
-  state.products[productId] ? state.products[productId] : null ;
+export const selectProduct = (product_id) => { return (state) => 
+  state.products[product_id] ? state.products[product_id] : null ;
 };
 
 export const selectProductsArray = (state) => Object.values(state.products);
@@ -41,8 +41,8 @@ export const fetchProducts = () => async dispatch => {
   }
 };
 
-export const fetchProduct = (productId) => async dispatch => {
-  const response = await csrfFetch(`/api/products/${productId}`);
+export const fetchProduct = (product_id) => async dispatch => {
+  const response = await csrfFetch(`/api/products/${product_id}`);
 
   if (response.ok) {
     const data = await response.json();
@@ -82,8 +82,8 @@ export const updateProduct = (product) => async dispatch => {
   }
 };
 
-export const deleteProduct = (productId) => async dispatch => {
-  const response = await fetch(`api/products/${productId}`, {
+export const deleteProduct = (product_id) => async dispatch => {
+  const response = await fetch(`api/products/${product_id}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
@@ -117,7 +117,7 @@ function productsReducer(state = {}, action) {
   case REMOVE_PRODUCT:
     return {
       ...state,
-      [action.productId]: undefined,
+      [action.product_id]: undefined,
     };
 
   default: 

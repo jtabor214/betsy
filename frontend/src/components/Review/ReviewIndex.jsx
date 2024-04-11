@@ -11,12 +11,12 @@ import './ReviewIndex.css';
 
 const ReviewsIndex = () => {
   const dispatch = useDispatch();
-  const { productId } = useParams();
+  const { product_id } = useParams();
   const currentUser = useSelector(state => state.session.user);
 
   useEffect(() => {
-    dispatch(fetchReviews(productId));
-  }, [dispatch, productId]);
+    dispatch(fetchReviews(product_id));
+  }, [dispatch, product_id]);
 
  
   const reviews = useSelector(selectReviewArray);
@@ -92,7 +92,7 @@ const ReviewsIndex = () => {
         <button id="shop-reviews">Reviews for this shop 0</button>
       </div>
       <div >
-        {reviews.reverse().filter(review => review.productId == productId).map((review) => (
+        {reviews.reverse().filter(review => review.product_id == product_id).map((review) => (
           <ReviewIndexItem key={review.id} review={review} />
         ))}
         {/* <ReactPaginate

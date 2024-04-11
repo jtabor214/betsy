@@ -184,8 +184,8 @@ const ProductsIndex = () => {
 
 Users who have an account can create, edit, and remove reviews and ratings that they leave on products:
 ```js
-export const createReview = (review, productId ) => async dispatch => {
-  const response = await csrfFetch(`/api/products/${productId}/reviews`, {
+export const createReview = (review, product_id ) => async dispatch => {
+  const response = await csrfFetch(`/api/products/${product_id}/reviews`, {
     method: 'POST',
     body: JSON.stringify(review),
     headers: {
@@ -216,8 +216,8 @@ export const updateReview = (review) => async dispatch => {
   }
 };
 
-export const deleteReview = (productId, reviewId) => async dispatch => {
-  const response = await csrfFetch(`/api/products/${productId}/reviews/${reviewId}`, {
+export const deleteReview = (product_id, reviewId) => async dispatch => {
+  const response = await csrfFetch(`/api/products/${product_id}/reviews/${reviewId}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',

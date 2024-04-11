@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import {selectProductsArray} from '../../store/product'
 import { fetchCart, memoizedCartItems } from '../../store/cart';
 import { NavLink } from 'react-router-dom';
-
+import CartIndexItem from './CartIndexItem';
 
 const CartIndex = () => {
     const dispatch = useDispatch();
@@ -22,7 +22,7 @@ const CartIndex = () => {
     let quantity = 0
     cartItems.forEach(item => {
         products.forEach(product => {
-            if (item.productId === product.id) {
+            if (item.product_id === product.id) {
                 quantity += item.quantity;
                 total += Math.round(item.quantity * product.price);
             }

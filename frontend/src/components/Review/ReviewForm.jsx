@@ -9,7 +9,7 @@ import './ReviewForm.css'
 const ReviewForm = ({review, setIsEditing, closeReview}) => {
   const dispatch = useDispatch();
   // const { reviewId } = useParams();
-  const { productId } = useParams();
+  const { product_id } = useParams();
   const [errors, setErrors] = useState([]);
   const [rating, setRating] = useState(review?.rating || 0);
   const [body, setBody] = useState(review?.body || '');
@@ -40,7 +40,7 @@ const ReviewForm = ({review, setIsEditing, closeReview}) => {
       dispatch(updateReview(newReview));
       setIsEditing(false);
     } else {
-      dispatch(createReview(newReview, productId));
+      dispatch(createReview(newReview, product_id));
       closeReview();
     }
   };

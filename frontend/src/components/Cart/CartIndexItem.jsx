@@ -10,7 +10,7 @@ import './CartIndexItem.css'
 const CartIndexItem = ({cartItem}) => {
   const dispatch = useDispatch();
   const currentUser = useSelector(state => state.session.user);
-  const product = useSelector(selectProduct(cartItem.productId));
+  const product = useSelector(selectProduct(cartItem.product_id));
   if (!product) return null;
   const [quantity, setQuantity] = useState(cartItem.quantity);
 
@@ -18,10 +18,10 @@ const CartIndexItem = ({cartItem}) => {
     const updateQuantity = parseInt(e.currentTarget.value);
     const updateCart = {id: cartItem.id, 
       quantity: updateQuantity, 
-      userId: currentUser.id, 
-      productId: product.id,};
+      user_id: currentUser.id, 
+      product_id: product.id,};
     setQuantity(updateQuantity);
-    dispatch(updateCartItem(updateCart))
+    dispatch(updateCartItem(updateCart, currentUser.id))
   }
 
    

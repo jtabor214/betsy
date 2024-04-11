@@ -9,14 +9,15 @@ import { memoizedCartItems, updateCartItem, createCartItem } from "../../store/c
 const ProductShow = () => {
   // const sessionUser = useSelector(state => state.session.user);
   const dispatch = useDispatch();
-  const { productId } = useParams();
-  const product = useSelector(selectProduct(productId));
+  const { product_id } = useParams();
+  const product = useSelector(selectProduct(product_id));
+  const currentUser = useSelector(state => state.session.user);
   const [quantity, setQuantity] = useState(1);
   const cartItems = useSelector(memoizedCartItems)
 
   useEffect(() => {
-    dispatch(fetchProduct(productId));
-  }, [dispatch, productId]);
+    dispatch(fetchProduct(product_id));
+  }, [dispatch, product_id]);
 
   const handleQuantityChange = (e) => {
     setQuantity(parseInt(e.target.value, 5))
@@ -26,10 +27,10 @@ const ProductShow = () => {
     e.preventDefault();
     // const userId = sessionUser.id;
     // console.log(userId)
-    const targetProduct = {quantity, productId,  };
+    const targetProduct = { quantity, product_id };
 
     const existingCartItem = cartItems.find(
-      (item) => item.productId === product.id
+      (item) => item.product_id === product.id
     );
 
     if (existingCartItem) {
@@ -37,9 +38,9 @@ const ProductShow = () => {
         ...existingCartItem,
         quantity: existingCartItem.quantity + quantity
       };
-      dispatch(updateCartItem(updatedCartItem));
+      dispatch(updateCartItem(updatedCartItem, currentUser.id));
     } else {
-      dispatch(createCartItem(targetProduct));
+      dispatch(createCartItem(targetProduct, currentUser.id));
     }
   };
   

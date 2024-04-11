@@ -8,30 +8,31 @@ export const CLEAR_CART = "cart/CLEAR_CART";
 
 export const receiveCart = (cart) => {
 	return {
-    type: RECEIVE_CART,
-    cart: cart,
+		type: RECEIVE_CART,
+		cart: cart,
 	};
 };
 
 export const receiveCartItem = (cartItem) => {
 	return {
-    type: RECEIVE_CART_ITEM,
-    cartItem: cartItem,
+		type: RECEIVE_CART_ITEM,
+		cartItem: cartItem,
 	};
 };
 
 export const removeCartItem = (cartItemId) => {
 	return {
-    type: REMOVE_CART_ITEM,
-    cartItemId: cartItemId,
+		type: REMOVE_CART_ITEM,
+		cartItemId: cartItemId,
 	};
 };
 
-export const selectCartItem = (cartItemId) => { return (state) =>
-  state?.cart ? state.cart[cartItemId] : null ;
+export const selectCartItem = (cartItemId) => {
+	return (state) =>
+		state?.cart ? state.cart[cartItemId] : null;
 };
 
-export const selectCartItems = (state) => state?.cart || {}; 
+export const selectCartItems = (state) => state?.cart || {};
 
 export const memoizedCartItems = createSelector(
 	[selectCartItems],
@@ -52,49 +53,52 @@ export const fetchCartItem = (cartItemId) => async (dispatch) => {
 
 	if (response.ok) {
 		const cartData = await response.json();
+		console.log(cartData)
 		dispatch(receiveCartItem(cartData))
 	}
 };
 
-export const createCartItem = (cartItem) => async (dispatch) => {
+export const createCartItem = (cartItem, userId) => async (dispatch) => {
 	const response = await csrfFetch(`/api/carts`, {
 		method: 'POST',
-		body: JSON.stringify(cartItem),
+		body: JSON.stringify({ ...cartItem, user_id: userId }),
 		headers: {
-		'Content-Type': 'application/json',
-		'Accept': 'application/json',
+			'Content-Type': 'application/json',
+			'Accept': 'application/json',
 		},
 	});
 
 	if (response.ok) {
 		const cartData = await response.json();
+		console.log(cartData)
 		dispatch(receiveCartItem(cartData.cartItem));
 	}
 };
 
-export const updateCartItem = (cartItem) => async (dispatch) => {
+export const updateCartItem = (cartItem, userId) => async (dispatch) => {
 	const response = await csrfFetch(`/api/carts/${cartItem.id}`, {
 		method: 'PATCH',
-		body: JSON.stringify(cartItem),
+		body: JSON.stringify({ ...cartItem, user_id: userId }),
 		headers: {
-		'Content-Type': 'application/json',
-		'Accept': 'application/json',
+			'Content-Type': 'application/json',
+			'Accept': 'application/json',
 		},
 	});
 
 	if (response.ok) {
 		const cartData = await response.json();
+		console.log(cartData)
 		dispatch(receiveCartItem(cartData.cartItem));
 	}
-}; 
+};
 
 export const deleteCartItem = (cartItemId) => async (dispatch) => {
 	const response = await csrfFetch(`/api/carts/${cartItemId}`, {
 		method: 'DELETE',
 		body: JSON.stringify(cartItemId),
 		headers: {
-		'Content-Type': 'application/json',
-		'Accept': 'application/json',
+			'Content-Type': 'application/json',
+			'Accept': 'application/json',
 		},
 	});
 
@@ -105,27 +109,27 @@ export const deleteCartItem = (cartItemId) => async (dispatch) => {
 };
 
 const cartReducer = (state = {}, action) => {
-	const newState = { ...state};
+	const newState = { ...state };
 	switch (action.type) {
 
-	case RECEIVE_CART:
-		return {
-		...state,
-		...action.cartItem || {}
-		};
-	
-	case RECEIVE_CART_ITEM:
-		return {
-			...state,
-			[action.cartItem.id]: action.cartItem,
-		};
+		case RECEIVE_CART:
+			return {
+				...state,
+				...action.cartItem || {}
+			};
 
-	case REMOVE_CART_ITEM:
-		delete newState[action.cartItemId]
-		return newState;
-	
-	default:
-		return state;
+		case RECEIVE_CART_ITEM:
+			return {
+				...state,
+				[action.cartItem.id]: action.cartItem,
+			};
+
+		case REMOVE_CART_ITEM:
+			delete newState[action.cartItemId]
+			return newState;
+
+		default:
+			return state;
 	}
 }
 
