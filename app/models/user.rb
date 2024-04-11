@@ -8,8 +8,7 @@ class User < ApplicationRecord
   validates :password, length: { in: 7..40 }, allow_nil: true
 
   # has_many :products, class_name: 'product', foreign_key: 'seller_id'
-
-
+  has_many :carts
 
 
 

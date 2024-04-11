@@ -1,4 +1,4 @@
-class CartsController < ApplicationController
+class Api::CartsController < ApplicationController
     before_action :require_logged_in, only: [:index]
 
     def index 
@@ -11,7 +11,7 @@ class CartsController < ApplicationController
         if @cart.save
             render :show 
         else 
-            render json: @cart.errors.full_messages, status: :unprocesasble_entity
+            render json: @cart.errors.full_messages, status: :unprocessable_entity
         end
     end 
 
@@ -29,7 +29,7 @@ class CartsController < ApplicationController
             if @cart.update(cart_params)
                 render :show
             else 
-                render json: @cart.errors.full_messages, status: :unprocesasble_entity
+                render json: @cart.errors.full_messages, status: :unprocessable_entity
             end
         end
     end
