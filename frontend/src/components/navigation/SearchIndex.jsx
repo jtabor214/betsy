@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchResults, selectResultsArray } from "../../store/search";
 import { useParams } from "react-router-dom";
-import ProductIndexItem from "../product/ProductIndexItem";
+import ProductIndexItem from "../Product/ProductIndexItem";
 
 
 const SearchIndex = () => {

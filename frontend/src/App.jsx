@@ -3,12 +3,12 @@ import { useDispatch } from 'react-redux';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 // import ProfileButton from './components/navigation/ProfileButton';
 import * as sessionActions from './store/session';
-import Splash from './components/splash/Splash';
+import Splash from './components/Splash/Splash.jsx';
 import Navigation from './components/Navigation/Navigation.jsx';
 // import ProductForm from './components/product/ProductForm';
-import ProductShow from './components/Product/ProductShow';
-import ProductsIndex from './components/Product/ProductsIndex';
-import SearchIndex from './components/Navigation/SearchIndex';
+import ProductShow from './components/Product/ProductShow.jsx';
+import ProductsIndex from './components/Product/ProductsIndex.jsx';
+import SearchIndex from './components/Navigation/SearchIndex.jsx';
 import NoPage from './components/NoPage/NoPage.jsx';
 
 
